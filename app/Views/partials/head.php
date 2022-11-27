@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="baseurl" content="<?= URLROOT ?>">
+    <meta name="csrf_token" content="<?= csrf_hash() ?>">
 
     <link rel="stylesheet" href="<?= assetsUrl('css/uikit.min.css') ?>">
     <link rel="stylesheet" href="<?= assetsUrl('css/main.min.css') ?>">
