@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+<?php $this->layout('partials/template', ['title' => $title]) ?>
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
-        
-    <title>Account</title>
-</head>
-<body>
-    
+<?= $this->start('mainSection') ?>
+
 <section class="uk-section uk-padding-remove-top">
     
     <div id="alter-profile-banner" class="uk-background-secondary uk-height-medium uk-overflow-hidden">
@@ -29,9 +15,9 @@
             <div style="top: -100px" class="uk-width-1-3@m uk-background-default uk-position-relative uk-position-z-index uk-margin-auto uk-border-rounded uk-flex uk-flex-column uk-flex-middle uk-card uk-card-body uk-card-hover uk-box-shadow-medium">
                 <div class="uk-margin-bottom uk-flex-1">
                     <?php if ($user->avatar): ?>
-                    <img width="120" height="120" class="uk-object-cover uk-border-circle" src="<?= assetsUrl("images/{$user->avatar}") ?>" alt="<?= $user->username ?> avatar"/>
+                        <img width="120" height="120" class="uk-object-cover uk-border-circle" src="<?= assetsUrl("images/avatars/{$user->avatar}") ?>" alt="<?= $user->username ?> avatar"/>
                     <?php else: ?>
-                    <img width="120" height="120" class="uk-object-cover" src="<?= assetsUrl("images/avatar_default/default_avatar_". random_int(1, 10) .".svg") ?>" alt="<?= $user->username ?> avatar"/>
+                        <img width="120" height="120" class="uk-object-cover" src="<?= assetsUrl("images/avatar_default/default_avatar_". random_int(1, 10) .".svg") ?>" alt="<?= $user->username ?> avatar"/>
                     <?php endif; ?>
                 </div>
                 
@@ -59,7 +45,7 @@
                     </li>
                     <li>
                         <b>Group</b>: 
-                        <i><?= $user->groups->name ?></i>
+                        <i><?= $user->usergroups->name ?></i>
                     </li>
                 </ul>
             </div>
@@ -69,5 +55,4 @@
     </div>
 </section>
 
-</body>
-</html>
+<?= $this->stop() ?>

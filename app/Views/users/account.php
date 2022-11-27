@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+<?php $this->layout('partials/template', ['title' => $title]) ?>
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
-        
-    <title>Account</title>
-</head>
-<body>
-    
-
+<?= $this->start('mainSection') ?>
     <section class="uk-section">
         <div class="uk-container uk-container-small">
             
@@ -97,7 +81,7 @@
                             <p class="uk-margin-remove uk-text-danger uk-text-small"><?= implode(', ', getFlashData('errors')->password_repeat ?? []) ?></p>
                         </div>
                         
-                        <div class="uk-flex uk-flex-between uk-flex-middle">
+                        <div id="account-buttons-set" class="uk-flex uk-flex-between uk-flex-middle">
                             <button class="uk-button uk-button-primary" type="submit">Update account</button>
                             
                             <a href="<?= baseUrl("users/profile/" . $_SESSION['userid']) ?>"><span uk-icon="icon: arrow-left; ratio: 1"></span> Go to profile page</a>
@@ -109,6 +93,4 @@
         </div>
     </section>
 
-
-</body>
-</html>
+<?= $this->stop(); ?>

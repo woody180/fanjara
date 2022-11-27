@@ -1,28 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+<?php $this->layout('partials/template', ['title' => $title]) ?>
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
-        
-    <title>Account</title>
-</head>
-<body>
-    
+<?= $this->start('mainSection') ?>
 
 <section class="uk-section">
     <div class="uk-container uk-container-small">
         
         <div class="uk-card uk-card-default">
             <div class="uk-card-body">
-                <p class="uk-text-lead">Password reset</p>
+                <p class="uk-text-lead">პაროლის აღდგენა</p>
                 
                 <?php if (hasFlashData('message')): ?>
                 <div class="uk-alert-primary" uk-alert>
@@ -41,24 +26,24 @@
                 <form id="alter-login-form" class="alter-login-form uk-grid-medium uk-child-width-1-1k" uk-grid action="<?= baseUrl("users/reset") ?>" method="POST" accept-charset="utf-8">
                     <?= csrf_field() ?>
                     <div>
-                        <label for="email" class="uk-form-label">Existing eMail</label>
+                        <label for="email" class="uk-form-label">არსებული ელ. ფოსტა</label>
                         <input id="email" type="email" name="email" class="uk-input" value="<?= getForm('email') ?>">
                         <p class="uk-margin-remove uk-text-danger uk-text-small"><?= implode(', ', getFlashData('errors')->email ?? []) ?></p>
                     </div>
                    
                     <div>
-                        <label for="password" class="uk-form-label">New password</label>
+                        <label for="password" class="uk-form-label">ახალი პაროლი</label>
                         <input id="password" type="password" name="password" class="uk-input" value="">
                         <p class="uk-margin-remove uk-text-danger uk-text-small"><?= implode(', ', getFlashData('errors')->password ?? []) ?></p>
                     </div>
                     
-                    <div class="uk-flex uk-flex-between uk-flex-middle">
-                        <button class="uk-button uk-button-primary" type="submit">Reset password</button>
+                    <div id="account-buttons-set" class="uk-flex uk-flex-between uk-flex-middle">
+                        <button class="uk-button uk-button-primary" type="submit">პაროლის აღდგენა</button>
                         
                         <div>
-                            <a class="uk-link" href="<?= baseUrl("users/register") ?>">Register new account</a>
+                            <a class="uk-link" href="<?= baseUrl("users/register") ?>">ახალი პროფილის შექმნა</a>
                             <span>-</span>
-                            <a class="uk-link" href="<?= baseUrl("users/login") ?>">Login to existing account</a>
+                            <a class="uk-link" href="<?= baseUrl("users/login") ?>">პროფილში შესვლა</a>
                         </div>
                     </div>
                 </form>
@@ -68,5 +53,4 @@
     </div>
 </section>
 
-</body>
-</html>
+<?= $this->stop(); ?>
