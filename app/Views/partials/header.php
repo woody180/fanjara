@@ -2,7 +2,9 @@
     <nav uk-navbar>
         
         <div class="uk-navbar-left">
-            some other stuff
+            <a href="<?= baseUrl() ?>" class="uk-display-block">
+                <img src="https://mx-static.markilux.com/images/81283/storage/master/markilux-logo-rgb-2020.svg" alt="alt" width="200" />
+            </a>
         </div>
 
         <div class="uk-navbar-right">
