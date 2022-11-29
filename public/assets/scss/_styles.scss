@@ -30,3 +30,37 @@
         height: 220px;
     }
 }
+
+
+
+// Phone bubble
+#phone-bubble {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #387833;
+    text-decoration: none;
+    background-color: #4cd360;
+    color: #387833;
+    transform: scale(.9); opacity: 0; visibility: hidden;
+    transition: all .2s ease;
+    animation-delay: 1s;
+    animation-duration: .5s;
+    animation-name: phoneBubble;
+    animation-fill-mode: forwards;
+
+    @keyframes phoneBubble {
+        from {transform: scale(.9); opacity: 0; visibility: hidden;}
+        50% {transform: scale(1.1);}
+        to {transform: scale(1); opacity: 1; visibility: visible;}
+    }
+}
+
+#phone-bubble:hover {
+        transform: scale(1.1);
+        color: initial;
+    }
+
+#phone-bubble:active {
+    transition: all .0s ease;
+    transform: scale(.95);
+}

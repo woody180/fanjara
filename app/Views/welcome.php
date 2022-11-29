@@ -46,6 +46,8 @@
                 <div class="uk-card uk-card-body uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
                     <a href="#" class="layer-film"></a>
                     
+                    <h3>კარ - ფანჯრები</h3>
+                    
                     <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ad dicta placeat fugiat quae eum repellat a atque sapiente odio. Fuga voluptatum quas beatae magnam laboriosam veritatis omnis necessitatibus illo!</p>
                     </a>

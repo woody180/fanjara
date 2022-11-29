@@ -76,6 +76,8 @@
     <?php endif; ?>
         
     <?= $this->insert('partials/mobileNav') ?>
+        
+    <?= $this->insert('partials/phoneBubble') ?>
 
 </body>
 </html>
