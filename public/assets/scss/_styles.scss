@@ -47,6 +47,7 @@
     animation-duration: .5s;
     animation-name: phoneBubble;
     animation-fill-mode: forwards;
+    z-index: 991;
 
     @keyframes phoneBubble {
         from {transform: scale(.9); opacity: 0; visibility: hidden;}

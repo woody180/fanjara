@@ -3,11 +3,13 @@
         <div class="uk-container">
             <div uk-grid class="uk-child-width-1-2 uk-grid-collapse">
                 <div>
-                    <div>1</div>
+                    <div>თბილისი, კეკელიძის #2</div>
                 </div>
 
                 <div>
-                    <div class="uk-flex uk-flex-right">2</div>
+                    <div class="uk-flex uk-flex-right">
+                        <a href="tel:+995322238060" class="uk-link-reset">+995 (32) 223 80 60</a>
+                    </div>
                 </div>
             </div>
         </div>

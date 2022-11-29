@@ -2,7 +2,7 @@
 
 <?php $this->start('mainSection') ?>
 
-<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 400; max-height: 700; autoplay: true; autoplay-interval: 3000; pause-on-hover: false;">
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 400; max-height: 700; autoplay: true; autoplay-interval: 5000; pause-on-hover: false;">
 
     <ul class="uk-slideshow-items">
         <li>
@@ -43,43 +43,76 @@
 
         <div uk-grid class="uk-grid-match uk-grid-small">
             <div class="uk-width-2-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
                     <a href="#" class="layer-film"></a>
                     
-                    <h3>კარ - ფანჯრები</h3>
-                    
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ad dicta placeat fugiat quae eum repellat a atque sapiente odio. Fuga voluptatum quas beatae magnam laboriosam veritatis omnis necessitatibus illo!</p>
+                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 class="uk-width-1-1">მეტალოპლასტმასის კარ-ფანჯარა REHAU</h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
                     </a>
                 </div>
             </div>
             
             <div class="uk-width-1-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-vario.webp" bg-size="contain" bg-position="bottom right">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-vario.webp" bg-size="contain" bg-position="bottom right">
                     <a href="#" class="layer-film"></a>
                     
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ad dicta placeat fugiat quae eum repellat a atque sapiente odio. Fuga voluptatum quas beatae magnam laboriosam veritatis omnis necessitatibus illo!</p>
+                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                         <h3 class="uk-width-1-1">ალუმინის კარ-ფანჯარა</h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
                     </a>
                 </div>
             </div>
             
             <div class="uk-width-1-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/space.webp" bg-size="contain" bg-position="bottom right">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/space.webp" bg-size="contain" bg-position="bottom right">
                     <a href="#" class="layer-film"></a>
                     
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, ad dicta placeat fugiat quae eum repellat a atque sapiente odio. Fuga voluptatum quas beatae magnam laboriosam veritatis omnis necessitatibus illo!</p>
+                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 class="uk-width-1-1">შემინვის სხვა სისტემები.</h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
                     </a>
                 </div>
             </div>
             
-            <div class="uk-width-2-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/design.webp" bg-size="contain" bg-position="bottom right">
+            <div class="uk-width-1-3@m uk-width-1-2@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
                     <a href="#" class="layer-film"></a>
                     
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisellat a atque sapiente odio. Fuga voluptatum quas beatae magnam laboriosam veritatis omnis necessitatibus illo!</p>
+                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                         <h3 class="uk-width-1-1">ინტერიერის ტიხრის სისტემები</h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="uk-width-1-3@m uk-width-1-1@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
+                    <a href="#" class="layer-film"></a>
+                    
+                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                         <h3 class="uk-width-1-1">მარკიზები და პერგოლა</h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -106,6 +139,8 @@
     <div class="uk-container">
         
         <div class="uk-margin-medium-bottom">
+            <h1><?= App\Engine\Libraries\Languages::translate('trans.our_products') ?></h1>
+            <hr class="uk-divider-small">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, veritatis, ipsa, atque sed possimus rem explicabo magni tenetur unde amet quasi eius quidem tempore at nesciunt adipisci vero hic et.</p>
         </div>
         
@@ -129,8 +164,85 @@
             <?php endforeach; ?>
             
         </div>
+        
+        
+        <div class="uk-width-1-1 uk-flex uk-flex-center uk-margin-medium-top">
+            <a href="#" class="uk-button uk-button-primary uk-button-icon uk-button-icon-right">
+                <span uk-icon="icon: arrow-right"></span>
+                <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+            </a>
+        </div>
     
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+<section class="uk-section" data-bg-color="#fff">
+    <div class="uk-container">
+        
+        <div class="uk-margin-medium-bottom">
+            <h1><?= App\Engine\Libraries\Languages::translate('trans.contact_us') ?></h1>
+            <hr class="uk-divider-small">
+            <p>ამომწურავი ინფორმაციის მისაღებად და შეკვეთის გასაფორმებლად გვესტუმრეთ ოფისში.</p>
+        </div>
+        
+        
+        <div uk-grid class="uk-grid-match">
+            
+            <div class="uk-width-1-3@m uk-width-1-2@s uk-width-1-1">
+                <div class="uk-card uk-card-body uk-background-muted uk-border-rounded">
+                    
+                    <p class="uk-text-bold"><?= App\Engine\Libraries\Languages::translate('trans.info') ?></p>
+                    
+                    <ul class="uk-list uk-list-striped">
+                        <li>
+                            <div class="uk-flex uk-flex-middle uk-flex-top">
+                                <span uk-icon="icon: receiver" class="uk-display-inline-block uk-margin-right"></span>
+                                <span class="uk-text-small">+995(32) 223 80 60</span>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="uk-flex uk-flex-middle uk-flex-top">
+                                <span uk-icon="icon: mail" class="uk-display-inline-block uk-margin-right"></span>
+                                <span class="uk-text-small">info@fanjara.ge</span>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="uk-flex uk-flex-middle uk-flex-top">
+                                <span uk-icon="icon: location" class="uk-display-inline-block uk-margin-right"></span>
+                                <span class="uk-text-small">თბილისი, კეკელიძის #2</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    
+                    <p class="uk-margin-small uk-text-small">ამომწურავი ინფორმაციის მისაღებად და შეკვეთის გასაფორმებლად გვესტუმრეთ ოფისში.</p>
+                    <hr class="uk-divider-small">
+                    <p class="uk-margin-small uk-text-small">ორ.-შაბ. 10:00-19:00 სთ.</p>
+                    <p class="uk-margin-small uk-text-small">კვირა 11:00-16:00 სთ.</p>
+                </div>
+            </div>
+            
+            
+            <div class="uk-width-2-3@m uk-width-1-2@s uk-width-1-1">
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.0260843619326!2d44.75221231585861!3d41.71995597923521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7d77607df9cdd127!2zNDHCsDQzJzExLjgiTiA0NMKwNDUnMTUuOCJF!5e0!3m2!1sen!2sge!4v1669722182702!5m2!1sen!2sge" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
 
 <?php $this->stop() ?>

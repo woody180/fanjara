@@ -55,7 +55,7 @@
                             </ul>
                         </div>
                         <div class="uk-text-center uk-text-right@m">
-                            <p>Indonez © 2019 All rights reserved</p>
+                            <p>fanjara.ge © 2022 All rights reserved</p>
                         </div>
                     </div>          
                 </div>
