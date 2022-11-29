@@ -18,7 +18,8 @@ export default class UiController extends SketchEngine {
         'textSize',
         'bgColor',
         'styles',
-        'mobileNav'
+        'mobileNav',
+        'responsive'
     ];
 
 
@@ -125,6 +126,34 @@ export default class UiController extends SketchEngine {
                 }
             });
 
+        },
+        
+        
+        responsive() {
+            /*
+             * add attributes like in the example
+             * data-responsive="max-width[100]; style[color: ...; font-size: ...;]"
+             */
+            
+            
+            document.querySelectorAll('[data-responsive]').forEach(elem => {
+                const str = elem.getAttribute('data-responsive');
+                const match = str.match(/max-width[\s+]?\[(.*?)\]\;/g);
+                const maxWidth = match[0].match(/\[(.*?)\]/)[1];
+                const styles = str.match(/style[\s+]?\[(.*?)\]/)[1];
+
+                let myFunction = x => {
+                    if (x.matches) { // If media query matches
+                        elem.setAttribute('style', styles);
+                    } else {
+                        elem.removeAttribute('style')
+                    }
+                }
+
+                let x = window.matchMedia("(max-width: "+maxWidth+"px)");
+                myFunction(x);
+                x.addListener(myFunction);
+            });
         }
 
     }
