@@ -18,21 +18,18 @@ else
     ini_set('display_errors', 0);
 
 
-// Adding singeton patterns
-$singletones = glob(APPROOT . "/Singleton/*.php");
-foreach ($singletones as $st) require_once $st;
-
-
-// Multilingual
-if (MULTILINGUAL) require_once APPROOT . "/Engine/Libraries/Languages.php";
-
-
 // Base helper files
 require_once APPROOT . "/Engine/Helpers/engineToolHelpers.php";
 require_once APPROOT . "/Engine/Helpers/engineHelpers.php";
 require_once APPROOT . "/Engine/Helpers/engineDebuggingHelpers.php";
 require_once APPROOT . "/Engine/Helpers/engineUrlHelpers.php";
 require_once APPROOT . "/Engine/Helpers/engineFormHelpers.php";
+
+
+// Composer autoload
+if (file_exists(APPROOT . '/Helpers/vendor/autoload.php')) {
+    require_once APPROOT . '/Helpers/vendor/autoload.php';
+}
 
 
 // Helper library
@@ -43,6 +40,34 @@ if (!empty(CUSTOM_HELPERS)) {
         require_once APPROOT . "/Helpers/{$helperFile}.php";
     }
 }
+
+
+// RedBeanPHP model initialization function
+if (DATABASE) require_once APPROOT . "/Engine/Database/Initialization.php";
+
+
+// Load files on application boot
+foreach (AUTOBOOT_FILES as $file) {
+    require_once APPROOT . "/Boot/{$file}.php";
+}
+
+
+// Multilingual
+require_once APPROOT . "/Engine/Libraries/Languages.php";   
+if (MULTILINGUAL)
+{
+    require_once APPROOT . '/Engine/Libraries/LanguageLogic.php';
+    App\Engine\Libraries\LanguageLogic::start();
+}
+
+
+
+// Adding singeton patterns
+$singletones = glob(APPROOT . "/Singleton/*.php");
+foreach ($singletones as $st) require_once $st;
+
+
+
 
 
 // Include image resizer library
@@ -69,24 +94,6 @@ require_once APPROOT . "/Engine/TemplateEngine/Template/Theme.php";
 require_once APPROOT . "/Engine/TemplateEngine/Extension/Asset.php";
 require_once APPROOT . "/Engine/TemplateEngine/Extension/URI.php";
 require_once APPROOT . "/Engine/TemplateEngine/Engine.php";
-
-
-// Composer autoload
-if (file_exists(APPROOT . '/Helpers/vendor/autoload.php')) {
-    require_once APPROOT . '/Helpers/vendor/autoload.php';
-}
-
-
-// RedBeanPHP model initialization function
-if (DATABASE) {
-    require_once APPROOT . "/Engine/Database/Initialization.php";
-}
-
-
-// Load files on application boot
-foreach (AUTOBOOT_FILES as $file) {
-    require_once APPROOT . "/Boot/{$file}.php";
-}
 
 
 // Validation library

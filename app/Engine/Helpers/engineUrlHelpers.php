@@ -17,6 +17,13 @@ function urlSegments($index = null, bool $removeQuery = false) {
     $url = isset($urlArr[1]) ? $urlArr[1] : '/';
     $url = ltrim($url, '/');
     $url = empty($url) ? '/' : $url;
+
+    if ($removeQuery) {
+        if (preg_match('/\?/', $url, $matchQuery)) {
+            list($path, $parameters) = explode('?', $url);
+            $url = $path;
+        }
+    }
     
     if (!is_null($index) && !is_int($index)) {
         $option = strtolower($index);
@@ -39,8 +46,15 @@ function urlSegments($index = null, bool $removeQuery = false) {
 }
 
 
-function baseUrl(string $url = null) {
-
+function baseUrl(string $url = null, $withLanguageCode = false) {
+    
+    if (MULTILINGUAL && $withLanguageCode) {
+        if ($url)
+            return URLROOT . '/' . \App\Engine\Libraries\Languages::active() . '/' . $url;
+        else
+            return URLROOT . '/' . \App\Engine\Libraries\Languages::active();
+    }
+    
     if ($url)
         return URLROOT . '/' . $url;
     else
