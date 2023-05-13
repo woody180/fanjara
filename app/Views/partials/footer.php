@@ -78,6 +78,11 @@
     <?= $this->insert('partials/mobileNav') ?>
         
     <?= $this->insert('partials/phoneBubble') ?>
+        
+        
+    <?php if (checkAuth([1])): ?>
+    <?= $this->insert('partials/admin_tools') ?>
+    <?php endif; ?>
 
 </body>
 </html>
