@@ -7,7 +7,7 @@ function checkAuth(array $privilegies = []) {
 
     if ($id) {
 
-        $user = R::findOne('users', 'id = ?', [$id]);
+        $user = initModel('users')->getUser($id);
 
         if (!$user) {
             unset($_SESSION['userid']);
