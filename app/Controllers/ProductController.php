@@ -20,6 +20,15 @@ class ProductController {
     public function index($req, $res) {
         echo 'All products';
     }
+    
+    
+    // Product list for admins
+    public function proudctList($req, $res)
+    {
+        return $res->render('admin/products/products', [
+            'products' => initModel('product')->list()
+        ]);
+    }
 
 
     // Show view
