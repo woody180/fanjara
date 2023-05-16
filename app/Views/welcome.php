@@ -41,81 +41,25 @@
             </div>
         </div>
 
-        <div uk-grid class="uk-grid-match uk-grid-small">
-            <div class="uk-width-2-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
-                    <a href="#" class="layer-film"></a>
-                    
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
-                        <h3 class="uk-width-1-1">მეტალოპლასტმასის კარ-ფანჯარა REHAU</h3>
-                        
-                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
-                            <span uk-icon="icon: arrow-right"></span>
-                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
-                        </button>
-                    </a>
-                </div>
-            </div>
+        <div class="fj-category-grid">
             
-            <div class="uk-width-1-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-vario.webp" bg-size="contain" bg-position="bottom right">
-                    <a href="#" class="layer-film"></a>
+            <?php foreach (initModel('Productcategory')->list() as $category): ?>
+            <div>
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$category->banner}") ?>" bg-size="contain" bg-position="bottom right">
+                    <a href="<?= baseUrl("categories/{$category->url}") ?>" class="layer-film"></a>
                     
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
-                         <h3 class="uk-width-1-1">ალუმინის კარ-ფანჯარა</h3>
+                    <a href="<?= baseUrl("categories/{$category->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $category->title ?></h3>
                         
                         <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
                             <span uk-icon="icon: arrow-right"></span>
-                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                            <span data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 12px;]"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
                         </button>
                     </a>
                 </div>
             </div>
+            <?php endforeach; ?>
             
-            <div class="uk-width-1-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounded uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/space.webp" bg-size="contain" bg-position="bottom right">
-                    <a href="#" class="layer-film"></a>
-                    
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
-                        <h3 class="uk-width-1-1">შემინვის სხვა სისტემები.</h3>
-                        
-                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
-                            <span uk-icon="icon: arrow-right"></span>
-                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="uk-width-1-3@m uk-width-1-2@s">
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
-                    <a href="#" class="layer-film"></a>
-                    
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
-                         <h3 class="uk-width-1-1">ინტერიერის ტიხრის სისტემები</h3>
-                        
-                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
-                            <span uk-icon="icon: arrow-right"></span>
-                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="uk-width-1-3@m uk-width-1-1@s">
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light" data-bg-color="#F2F2F2" data-bg="https://www.okna.ru/local/templates/kaleva/images/new-index/combo-space.webp" bg-size="contain" bg-position="bottom right">
-                    <a href="#" class="layer-film"></a>
-                    
-                    <a href="#" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
-                         <h3 class="uk-width-1-1">მარკიზები და პერგოლა</h3>
-                        
-                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
-                            <span uk-icon="icon: arrow-right"></span>
-                            <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
-                        </button>
-                    </a>
-                </div>
-            </div>
         </div>
     
     </div>

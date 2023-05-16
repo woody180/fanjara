@@ -13,6 +13,8 @@
     <script src="<?= assetsUrl('js/uikit.min.js') ?>"></script>
     <script src="<?= assetsUrl('js/uikit-icons.min.js') ?>"></script>
     
+    <?= $this->section('scripts') ?>
+    
     <title><?= $title ?? APPNAME; ?></title>
 </head>
 <body>

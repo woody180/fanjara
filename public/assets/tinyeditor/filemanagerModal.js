@@ -56,15 +56,17 @@ function filemanager(callback) {
         //     'cut', 'paste', 'edit', 'extract', 'archive', 'search', 'info', 'view', 'help', 'resize', 'sort', 'netmount'
         // ],
         contextmenu: {
-            // navbar: ['open', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'info'],
-            // files: [
-            //     'Insert', 'open', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', '|',
-            //     'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|'
-            // ],
-            // cwd: ['reload', 'back', '|', 'upload', 'mkdir', 'paste', '|', 'info'],
+             navbar: ['open', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'info'],
+             files: [
+                 'Insert', 'open', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', '|',
+                 'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|'
+             ],
+             cwd: ['reload', 'back', '|', 'upload', 'mkdir', 'paste', '|', 'info'],
         },
         getfile: {
-            multiple: true
+            onlyURL  : false,
+            multiple : true,
+            folders  : false
         },
         // This is important! Prevent opening file in popup
         // Putting image / file path into 'getFile' variable (array)
@@ -80,7 +82,7 @@ function filemanager(callback) {
     $(document.body).append(fmHTML);
 
     setTimeout(() => {
-        $('#elfinder').elfinder(options).elfinder('instance');
+            $('#elfinder').elfinder(options).elfinder('instance');
     }, 300);
 }
 

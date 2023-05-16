@@ -11,12 +11,20 @@ class ComposerStaticInitbe9a3927d2ffb091b461e4012d3ca89e
         array (
             'ScssPhp\\ScssPhp\\' => 16,
         ),
+        'C' => 
+        array (
+            'Cocur\\Slugify\\' => 14,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'ScssPhp\\ScssPhp\\' => 
         array (
             0 => __DIR__ . '/..' . '/scssphp/scssphp/src',
+        ),
+        'Cocur\\Slugify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cocur/slugify/src',
         ),
     );
 

@@ -19,4 +19,7 @@ return [
     'send' => 'Send',
     'create' => 'Create',
     'submit' => 'Submit',
+    'category' => 'Category',
+    'choose_product_category' => 'Choose product category',
+    'add_product' => 'Add product'
 ];

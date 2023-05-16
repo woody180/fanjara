@@ -19,4 +19,7 @@ return [
     'send' => 'გაგზავნა',
     'create' => 'შექმნა',
     'submit' => 'შექმნა',
+    'category' => 'კატეგორია',
+    'choose_product_category' => 'აირჩიე პროდუქტის კატეგორია',
+    'add_product' => 'პროდუქტის დამატება'
 ];

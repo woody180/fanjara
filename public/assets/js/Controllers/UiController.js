@@ -47,7 +47,7 @@ export default class UiController extends SketchEngine {
             document.querySelectorAll('[data-bg]').forEach(bg => {
                 
                 const image = bg.getAttribute('data-bg');
-                bg.style.background = `url(${image}) no-repeat center`;
+                bg.style.background = `url(${image}) no-repeat center / cover`;
                 
                 if (bg.getAttribute('bg-size')) {
                     const bgSize = bg.getAttribute('bg-size');

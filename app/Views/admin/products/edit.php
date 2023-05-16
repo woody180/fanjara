@@ -1,0 +1,132 @@
+<?php $this->layout('partials/template') ?>
+
+<?= $this->start('mainSection') ?>
+
+<section class="uk-section">
+    <div class="uk-container min-height">
+        
+        <div class="uk-margin-large-bottom">
+            <h3><?= App\Engine\Libraries\Languages::translate('trans.add_product') ?></h3>
+            <hr class="uk-divider-small">
+        </div>
+        
+        
+        <?php if (hasFlashData('success')): ?>
+        <div class="uk-alert-success" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><?= getFlashData('success') ?></p>
+        </div>
+        <?php endif; ?>
+        
+        <form enctype="multipart/form-data" action="<?= baseUrl("product/{$product->id}") ?>" class="uk-child-width-1-1" method="post" uk-grid>
+            
+            <?= setMethod('put') ?>
+            
+            <div class="uk-width-1-2@m">
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.title') ?></label>
+                <input type="text" name="title" class="uk-input uk-border-rounded" value="<?= $product->title ?>">
+                <?= show_error('error', 'title') ?>
+            </div>
+            
+            <div class="uk-width-1-2@m">
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.url') ?></label>
+                <input type="text" name="url" class="uk-input uk-border-rounded" value="<?= $product->url ?>">
+            </div>
+            
+            <div class="uk-width-1-3@m">
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.price') ?></label>
+                <input type="number" name="price" class="uk-input uk-border-rounded" value="<?= $product->price ?>">
+                <?= show_error('error', 'price') ?>
+            </div>
+            
+            <div class="uk-width-2-3@m">
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.priceconstructorurl') ?></label>
+                <input type="text" name="constructorurl" class="uk-input uk-border-rounded" value="<?= $product->constructorurl ?>">
+                <?= show_error('error', 'constructorurl') ?>
+            </div>
+            
+            
+            <div>
+                <div>
+                 
+                    <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.choose_product_category') ?></label>
+                    
+                    <select class="uk-select uk-width-1-1 uk-border-rounded" name="productcategory">
+                        <?php foreach (initModel('Productcategory')->list() as $pc): ?>
+                            <option <?= $pc->id === reset($product->sharedProductcategory)->id ? 'selected' : '' ?> value="<?= $pc->id ?>"><?= $pc->title ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    
+                    <?= show_error('error', 'productcategory') ?>
+                </div>
+            </div>
+            
+            
+            <div class="uk-width-1-3@m">
+                <label for="thumb" class="uk-form-label uk-display-block uk-cursor-pointer" id="fj-upload-thumbnail">
+
+                    <?= App\Engine\Libraries\Languages::translate('trans.thumbnail') ?>
+
+                    <input hidden id="thumb" type="file" name="thumbnail" value="<?= $product->thumbnail ?>">
+
+                    <div class="uk-width-1-1 uk-card uk-border-rounded uk-overflow-hidden" style="border: 1px solid #e5e5e5; height: 95px;">
+
+                        <a id="fj-remove-thumb" href="#" uk-icon="icon: close;" class="uk-icon-button uk-position-top-right uk-margin-right uk-margin-top uk-position-z-index"></a>
+
+                        <img class="uk-display-block uk-object-cover uk-width-1-1" src="<?= assetsUrl("tinyeditor/filemanager/files/{$product->thumbnail}") ?>" />
+                    </div>
+                </label>
+                
+                <?= show_error('error', 'thumbnail') ?>
+            </div>
+            
+            
+            <div class="uk-width-2-3@m">
+                
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.gallery') ?></label>
+                <input id="fg-gallery-hidden" type="hidden" name="gallery" value="<?= join(',', json_decode($product->gallery)) ?>">
+                
+                <div id="fg-filemanager" class="js-upload uk-placeholder uk-text-center uk-margin-remove uk-cursor-pointer">
+                    <span uk-icon="icon: cloud-upload"></span>
+                    <div>
+                        <span class="uk-link">Upload gallery files from here</span>
+                    </div>
+                </div>
+                
+                
+                <ul id="fj-sortable-gallery" class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-margin-top" uk-sortable="handle: .uk-card" uk-grid>
+                    <?php foreach (json_decode($product->gallery) as $gallery): ?>
+                    <li data-img="<?= $gallery ?>">
+                        <div class="uk-position-relative uk-border-rounded uk-card uk-card-default uk-card-body uk-text-center" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$gallery}") ?>">
+                            <a href="#" uk-icon="icon: trash;" class="uk-icon-button"></a>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+
+                
+                <?= show_error('error', 'gallery') ?>
+            </div>
+            
+            <div>
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.content') ?></label>
+                <textarea name="body" class="uk-textarea uk-height-small uk-border-rounded"><?= $product->body ?></textarea>
+                <?= show_error('error', 'body') ?>
+            </div>
+            
+            
+            <div>
+                <button class="uk-button uk-button-secondary uk-width-1-1"><?= App\Engine\Libraries\Languages::translate('trans.create') ?></button>
+            </div>
+            
+        </form>
+        
+    </div>
+</section>
+
+<?= $this->stop(); ?>
+
+
+<?= $this->start('scripts') ?>
+<script src="<?= assetsUrl('tinyeditor/tinyeditor.js') ?>"></script>
+<?= $this->stop() ?>

@@ -182,11 +182,11 @@ class Cli {
             
             die("\n" . $languageCode . " - language code not detected");
         }
+        
+        
+        }
 
         
-    }
-
-
     private static function make(string $fileType, string $fileName, string $param = null) {
 
         $type = ucfirst($fileType);

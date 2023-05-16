@@ -65,3 +65,30 @@
     transition: all .0s ease;
     transform: scale(.95);
 }
+
+
+
+
+.min-height {
+    min-height: 500px;
+}
+
+
+
+// Cateogry grid for home page
+.fj-category-grid {
+    
+    display: grid;
+    gap: 10px;
+    
+    
+    @include mScreen {
+        grid-template-columns: 1fr 1fr 1fr;
+        & > div:nth-child(1) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+    
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+}
