@@ -141,14 +141,13 @@ class ProductController {
 
     // Update
     public function update($req, $res) {
-        
+                
         initModel('product');
         
         $id = $req->getSegment(2);
         
         $body = $req->body();
-        $body['thumbnail'] = $req->files('thumbnail')->show();
-        $body['gallery'] = $req->files('gallery')->show();
+        $body['thumbnail'] = ($req->files('thumbnail')->show('error') === 0) ? $req->files('thumbnail')->show() : $body['thumbnail'];
         
         $validation = new Validation();
         $errors = $validation
@@ -157,7 +156,7 @@ class ProductController {
                 'title|Title' => 'required|string|max[100]',
                 'url|Url' => 'min[4]|max[20]|valid_url',
                 'thumbnail|Thumbnail' => 'required|ext[jpg,jpeg,png,webp]',
-                'gallery|Gallery' => 'ext[jpg,jpeg,png,webp]',
+                'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
                 'constructorurl|Calculation url' => 'valid_url|max[300]',
                 'productcategory|Product category' => 'required|numeric|max[3]'
@@ -165,8 +164,6 @@ class ProductController {
             ->validate();
         
         unset($body['productcategory']);
-        unset($body['thumbnail']);
-        unset($body['gallery']);
         
         // If errors
         if (!empty($errors)) {
@@ -176,9 +173,35 @@ class ProductController {
         }
         
         
+        // Upload thumbnail
+        // Check if file not exists
+        if ($req->files('thumbnail')->show('error') === 0)
+        {
+            $filePath = dirname(APPROOT) . "/public/assets/tinyeditor/filemanager/files/thumbnails";
+            $image = $req->files('thumbnail')->upload($filePath);
+            $body['thumbnail'] = explode('files/', $image)[1];
+
+            // Resize image
+            $resImage = new ImageResize($image);
+            $resImage->quality_jpg = 75;
+            $resImage->resizeToLongSide(400);
+            $resImage->save($image);
+        }
+        
         // Get product
-        $product = R::findOne('proeuct', 'id = ?', [$id]);
+        $product = R::findOne('product', 'id = ?', [$id]);
         $product->import($body);
+        $product->sharedProductcategory = [];
+        $product->sharedProductcategoryList[] = R::findOne('productcategory', 'id = ?', [$req->body('productcategory')]);
+        R::store($product);
+        
+        setFlashData('success', \App\Engine\Libraries\Languages::translate([
+            'ge' => 'პროდუქტი წარმატებით განახლდას.',
+            'en' => 'Product updated successfully.',
+            'ru' => 'Продукт успешно обновлен.'
+        ]));
+        
+        return $res->redirectBack();
     }
 
 
