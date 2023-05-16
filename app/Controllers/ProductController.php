@@ -22,7 +22,6 @@ class ProductController {
         
         $body = $req->body();
         $body['thumbnail'] = $req->files('thumbnail')->show();
-        $body['gallery'] = $req->files('gallery')->show();
         
         $validation = new Validation();
         $errors = $validation
@@ -31,7 +30,7 @@ class ProductController {
                 'title|Title' => 'required|string|max[100]',
                 'url|Url' => 'min[4]|max[20]|valid_url',
                 'thumbnail|Thumbnail' => 'required|ext[jpg,jpeg,png,webp]',
-                'gallery|Gallery' => 'ext[jpg,jpeg,png,webp]',
+                'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
                 'constructorurl|Calculation url' => 'valid_url|max[300]',
                 'productcategory|Product category' => 'required|numeric|max[3]'
@@ -40,7 +39,6 @@ class ProductController {
         
         unset($body['productcategory']);
         unset($body['thumbnail']);
-        unset($body['gallery']);
         
         // If errors
         if (!empty($errors)) {
@@ -70,14 +68,6 @@ class ProductController {
         $resImage->quality_jpg = 75;
         $resImage->resizeToLongSide(400);
         $resImage->save($image);
-        
-        
-        // Upload gallery
-        $filePathGallery = dirname(APPROOT) . "/public/assets/tinyeditor/filemanager/files/galleries";
-        $imagesArr = $req->files('gallery')->upload($filePathGallery);
-        $arr = [];
-        foreach ($imagesArr as $img) $arr[] = explode ('files/', $img)[1];
-        $body['gallery'] = toJSON($arr);
         
         
         ///////////////////// Save product /////////////////////
@@ -171,6 +161,16 @@ class ProductController {
             setForm($body);
             return $res->redirectBack();
         }
+        
+        
+        // Working with url
+        $slugify = new Slugify();
+        if (empty($body['url'])) {
+            $body['url'] = $slugify->slugify($req->body('title'));
+        } else {
+            $body['url'] = $slugify->slugify($body['url']);
+        }
+
         
         
         // Upload thumbnail
