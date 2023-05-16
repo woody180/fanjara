@@ -67,7 +67,8 @@
 
                     <?= App\Engine\Libraries\Languages::translate('trans.thumbnail') ?>
 
-                    <input hidden id="thumb" type="file" name="thumbnail" value="<?= $product->thumbnail ?>">
+                    <input hidden id="thumb" type="file" name="thumbnail" value="">
+                    <input hidden type="text" name="thumbnail" value="<?= $product->thumbnail ?>">
 
                     <div class="uk-width-1-1 uk-card uk-border-rounded uk-overflow-hidden" style="border: 1px solid #e5e5e5; height: 95px;">
 
@@ -84,7 +85,7 @@
             <div class="uk-width-2-3@m">
                 
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.gallery') ?></label>
-                <input id="fg-gallery-hidden" type="hidden" name="gallery" value="<?= join(',', json_decode($product->gallery)) ?>">
+                <input id="fg-gallery-hidden" type="hidden" name="gallery" value="<?= $product->gallery ?>">
                 
                 <div id="fg-filemanager" class="js-upload uk-placeholder uk-text-center uk-margin-remove uk-cursor-pointer">
                     <span uk-icon="icon: cloud-upload"></span>
@@ -95,7 +96,7 @@
                 
                 
                 <ul id="fj-sortable-gallery" class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-margin-top" uk-sortable="handle: .uk-card" uk-grid>
-                    <?php foreach (json_decode($product->gallery) as $gallery): ?>
+                    <?php foreach (explode(',',$product->gallery) as $gallery): ?>
                     <li data-img="<?= $gallery ?>">
                         <div class="uk-position-relative uk-border-rounded uk-card uk-card-default uk-card-body uk-text-center" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$gallery}") ?>">
                             <a href="#" uk-icon="icon: trash;" class="uk-icon-button"></a>
