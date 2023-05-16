@@ -26,7 +26,8 @@ export default class ProductController extends SketchEngine {
         thumbInput: '#thumb',
         filemanagerBtn: '#fg-filemanager',
         galleryHiddenInput: '#fg-gallery-hidden',
-        sortableGalleryContainer: '#fj-sortable-gallery'
+        sortableGalleryContainer: '#fj-sortable-gallery',
+        imageTrashBtn: '.fj-gallery-image-trash'
     };
 
 
@@ -41,10 +42,28 @@ export default class ProductController extends SketchEngine {
         this.lib(this.selectors.removeThumb).on('click', this.functions.removeThumb.bind(this));
         UIkit.util.on(this.selectors.sortableGalleryContainer, 'stop', this.functions.gallerySort.bind(this));
         this.lib(this.selectors.filemanagerBtn).on('click', this.functions.openFilemanager.bind(this));
+        this.lib('body').on('click', this.functions.imageTrash.bind(this), this.selectors.imageTrashBtn);
     }
 
 
     functions = {
+        
+        imageTrash(e) {
+            e.preventDefault();
+            
+            if (!confirm('Are you sure?')) return false;
+            
+            const el = e.target.closest('a');
+            const index = el.getAttribute('data-index');
+            const inp = document.querySelector(this.selectors.galleryHiddenInput);
+            const val = inp.getAttribute('value');
+            let arr = val.split(',');
+            arr.splice(index, 1);
+            inp.value = arr.join(',');
+            
+            el.closest('li').remove();
+        },
+        
         
         openFilemanager(e) {
             e.preventDefault();
@@ -54,34 +73,50 @@ export default class ProductController extends SketchEngine {
             
             filemanager(files => {
                 console.log(files);
-                files.forEach(item => {
+                files.forEach( (item, i) => {
                     const file = item.split('files/')[1];
                     arr.push(file);
-                    
-                    document.querySelector(this.selectors.sortableGalleryContainer).insertAdjacentHTML('afterbegin', `
-                        <li data-img="${file}">
-                            <div class="uk-position-relative uk-border-rounded uk-card uk-card-default uk-card-body uk-text-center" data-bg="${this.variables.baseurl}/assets/tinyeditor/filemanager/files/${file}">
-                                <a href="#" uk-icon="icon: trash;" class="uk-icon-button"></a>
-                            </div>
-                        </li>
-                    `)
                 });
                 document.querySelector(this.selectors.galleryHiddenInput).value = arr.join(',');
-                console.log(arr);
-
-                document.querySelectorAll('[data-bg]').forEach(bg => {
-                    const image = bg.getAttribute('data-bg');
-                    bg.style.background = `url(${image}) no-repeat center / cover`;
-                });
+                
+                // Creating gallery sortable cards :)
+                this.functions.generateGalleryCards.call(this);
+            });
+            
+        },
+        
+        
+        generateGalleryCards() {
+            const inp = document.querySelector(this.selectors.galleryHiddenInput);
+            const val = inp.getAttribute('value');
+            let arr = val.split(',');
+            const galleryContainer = document.querySelector(this.selectors.sortableGalleryContainer);
+            galleryContainer.innerHTML = '';
+            
+            arr.forEach((imgPath, index) => {
+                galleryContainer.insertAdjacentHTML('beforeend', `
+                    <li data-img="${imgPath}">
+                        <div class="uk-position-relative uk-border-rounded uk-card uk-card-default uk-card-body uk-text-center" data-bg="${this.variables.baseurl}/assets/tinyeditor/filemanager/files/${imgPath}">
+                            <a data-index="${index}" href="#" uk-icon="icon: trash;" class="uk-icon-button fj-gallery-image-trash"></a>
+                        </div>
+                    </li>
+                `)
+            });
+            
+            document.querySelectorAll('[data-bg]').forEach(bg => {
+                const image = bg.getAttribute('data-bg');
+                bg.style.background = `url(${image}) no-repeat center / cover`;
             });
         },
         
         
         gallerySort(e) {
-            console.log(e.target);
-            const arr = Array.from(e.target.querySelectorAll('li')).map(a => a.getAttribute('data-img'));
-            document.querySelector(this.selectors.galleryHiddenInput).value = arr.join(',');
+            const arr = Array.from(e.target.querySelectorAll('li')).map((li, i) => {
+                li.querySelector('a.fj-gallery-image-trash').setAttribute('data-index', i);
+                return li.getAttribute('data-img');
+            });
             console.log(arr);
+            document.querySelector(this.selectors.galleryHiddenInput).value = arr.join(',');
         },
         
         

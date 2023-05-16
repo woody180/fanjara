@@ -96,10 +96,10 @@
                 
                 
                 <ul id="fj-sortable-gallery" class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@s uk-margin-top" uk-sortable="handle: .uk-card" uk-grid>
-                    <?php foreach (explode(',',$product->gallery) as $gallery): ?>
+                    <?php foreach (explode(',',$product->gallery) as $i => $gallery): ?>
                     <li data-img="<?= $gallery ?>">
                         <div class="uk-position-relative uk-border-rounded uk-card uk-card-default uk-card-body uk-text-center" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$gallery}") ?>">
-                            <a href="#" uk-icon="icon: trash;" class="uk-icon-button"></a>
+                            <a data-index="<?= $i ?>" href="#" uk-icon="icon: trash;" class="uk-icon-button fj-gallery-image-trash"></a>
                         </div>
                     </li>
                     <?php endforeach; ?>
