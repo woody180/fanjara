@@ -22,16 +22,25 @@ function youtubeVid($url, $width = '640', $height = '360') {
 function img($params = [], $directPath = false) {
 
     $src = $params['src'];
+    $path = $directPath ? dirname(APPROOT) . "/public/assets/tinyeditor/filemanager/files/" . $src : dirname(APPROOT) . "/public/assets/" . $src;
+    
+    // Check if file exists
+    if (!file_exists($path)) {
+        $directPath = false;
+        $src = "images/not-found.png";
+    }
+    
+    
     $alt = isset($params['alt']) ? 'alt="'.$params['alt'].'"' : '';
     $width = isset($params['width']) ? 'width="'.$params['width'].'"' : '';
     $height = isset($params['height']) ? 'height="'.$params['height'].'"' : '';
     $class = isset($params['class']) ? 'class="'.$params['class'].'"' : '';
 
     if ($directPath) {
-        $newSrc = baseUrl("assets/tinyeditor/filemanager/files/{$src}");
-        return "<img {$class} {$width} {$height} src=\"".baseUrl('assets/tinyeditor/filemanager/files/'.$src.'')."\" {$alt} />";
+        $newSrc = assetsUrl("tinyeditor/filemanager/files/{$src}");
+        return "<img {$class} {$width} {$height} src=\"".assetsUrl('tinyeditor/filemanager/files/'.$src.'')."\" {$alt} />";
     }
-    return "<img {$class} {$width} {$height} src=\"".baseUrl("assets/$src")."\" {$alt} />";
+    return "<img {$class} {$width} {$height} src=\"".assetsUrl("$src")."\" {$alt} />";
 }
 
 
