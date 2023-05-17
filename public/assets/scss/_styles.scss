@@ -92,3 +92,14 @@
     
     grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
 }
+
+
+.uk-card-media-top {
+    height: 200px;    
+}
+
+.uk-card-body {
+    h3 {
+        font-size: 18px;
+    }
+}
