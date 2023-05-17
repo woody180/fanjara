@@ -18,13 +18,17 @@ class ProductcategoryController {
 
     // All items
     public function index($req, $res) {
-       
+        
     }
 
 
     // Show view
-    public function show($req, $res) {
-        $id = $req->getSegment(2);
+    public function show($req, $res)
+    {
+        return $res->render('products/list', [
+            'products' => initModel('Productcategory')
+                ->categoryProducts($req->getSegment(2))
+        ]);
     }
 
 
