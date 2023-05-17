@@ -21,7 +21,7 @@
 
                 <div class="uk-navbar-left">
                     <a href="<?= baseUrl() ?>" class="uk-display-block">
-                        <img src="https://mx-static.markilux.com/images/81283/storage/master/markilux-logo-rgb-2020.svg" alt="alt" width="200" />
+                        <img src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="200" />
                     </a>
                 </div>
 
