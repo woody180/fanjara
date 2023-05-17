@@ -209,7 +209,11 @@ class ProductController {
     public function delete($req, $res) {
         $id = $req->getSegment(2);
         
-        dd($id);
+        initModel('product');
+        
+        R::trash('product', $id);
+        
+        return $res->redirectBack();
     }
 
 }
