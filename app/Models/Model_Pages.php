@@ -33,9 +33,10 @@ class Model_Pages extends RedBean_SimpleModel {
         $page->import([
             'title' => 'title',
             'url' => 'url',
+            'description' => 'description',
             'thumbnail' => 'thumbnail',
-            'banner' => 'banner',
-            'body' => 'body'
+            'body' => 'body',
+            'createdat' => 'createdat'
         ]);
         R::store($page);
     }
