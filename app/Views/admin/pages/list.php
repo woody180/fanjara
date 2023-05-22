@@ -1,11 +1,6 @@
 <?php $this->layout('partials/template') ?>
 
 
-<?= $this->start('scripts') ?>
-<script src="<?= assetsUrl('tinyeditor/tinyeditor.js') ?>"></script>
-<?= $this->stop() ?>
-
-
 <?= $this->start('mainSection') ?>
 <section class="uk-section">
     <div class="uk-container min-height">
