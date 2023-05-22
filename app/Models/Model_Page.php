@@ -84,6 +84,8 @@ class Model_Page extends RedBean_SimpleModel {
         $page->url = empty($body['url']) ? $slugify->slugify($body['title']) :  $slugify->slugify($body['url']);
         $page->description = $body['description'];
         $page->body = $page_placeholder;
+        $page->lang = $body['lang'];
+        $page->createdat = time();
         
         return R::store($page); // Returns page ID
     }
