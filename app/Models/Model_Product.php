@@ -28,6 +28,16 @@ class Model_Product extends RedBean_SimpleModel {
     
     
     
+    public function show($url) {
+        if (is_numeric($url)) {
+            return R::findOne('product', 'id = ?', [$url]) ?? abort();
+        } else {
+            return R::findOne('product', 'url = ?', [$url]) ?? abort();
+        }
+    }
+    
+    
+    
     public function list()
     {
         $totalPages = R::count('product');
