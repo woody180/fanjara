@@ -84,7 +84,5 @@
     <?= $this->insert('partials/admin_tools') ?>
     <?php endif; ?>
 
-    <script src="<?= assetsUrl("js/tinyeditorInit.js") ?>"></script>
-
 </body>
 </html>
