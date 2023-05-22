@@ -37,6 +37,7 @@ class Model_Pages extends RedBean_SimpleModel {
             'banner' => 'banner',
             'body' => 'body'
         ]);
+        R::store($page);
     }
     
     
