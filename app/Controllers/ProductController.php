@@ -72,6 +72,8 @@ class ProductController {
         
         
         ///////////////////// Save product /////////////////////
+        $page_placeholder = file_get_contents(APPROOT . "/Views/admin/placeholder_layouts/page_body_placeholder.html");
+        $body['body'] = $page_placeholder;
         $product = R::dispense('product');
         $product->import($body);
         $category = R::load('productcategory', $req->body('productcategory'));
