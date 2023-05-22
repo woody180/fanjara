@@ -40,7 +40,8 @@ class Model_Installer extends RedBean_SimpleModel {
             'description' => 'description',
             'thumbnail' => 'thumbnail',
             'body' => 'body',
-            'createdat' => 'createdat'
+            'createdat' => 'createdat',
+            'lang' => 'lg'
         ]);
         R::store($page);
         R::trash('page', 1);
@@ -92,6 +93,7 @@ class Model_Installer extends RedBean_SimpleModel {
             'gallery' => 'gallery',
             'body' => 'body',
             'constructorurl' => 'contructorurl',
+            'lang' => 'lg',
             'createdat' => time(),
             'updatedat' => time()
         ]);
