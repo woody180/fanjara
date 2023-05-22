@@ -33,7 +33,8 @@ class ProductController {
                 'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
                 'constructorurl|Calculation url' => 'valid_url|max[300]',
-                'productcategory|Product category' => 'required|numeric|max[3]'
+                'productcategory|Product category' => 'required|numeric|max[3]',
+                'lang|Lanugage' => 'min[2]|max[2]|alpha'
             ])
             ->validate();
         
@@ -113,8 +114,11 @@ class ProductController {
 
 
     // Show view
-    public function show($req, $res) {
-        $id = $req->getSegment(2);
+    public function show($req, $res)
+    {
+        return $res->render('products/product', [
+            'product' => initModel('product')->show($req->getSegment(2))
+        ]);
     }
 
 
@@ -149,7 +153,8 @@ class ProductController {
                 'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
                 'constructorurl|Calculation url' => 'valid_url|max[300]',
-                'productcategory|Product category' => 'required|numeric|max[3]'
+                'productcategory|Product category' => 'required|numeric|max[3]',
+                'lang|Lanugage' => 'min[2]|max[2]|alpha'
             ])
             ->validate();
         
