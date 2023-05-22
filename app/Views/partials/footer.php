@@ -11,7 +11,7 @@
                         <div>
                             <div>
                                 <div class="uk-first-column">
-                                    <img src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="300" />
+                                    <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="300" />
                                 </div>
                             </div>
 
