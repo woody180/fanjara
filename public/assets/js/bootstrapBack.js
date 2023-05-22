@@ -1,7 +1,7 @@
 const baseurl = document.querySelector('meta[name="baseurl"]') ? document.querySelector('meta[name="baseurl"]').getAttribute('content') : alert('Add <meta name="baseurl" content="website-url" /> baseurl meta tag!');
 
 
-if (document.body.classList.contains('load-tinyeditor')) {
+if (document.body.classList.contains('init-tinyeditor')) {
     new FgTinyEditor({
         selector: '.editable',
         rootPath: baseurl + '/assets/tinyeditor',
