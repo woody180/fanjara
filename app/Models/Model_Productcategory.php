@@ -29,7 +29,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
     
     public function list()
     {
-        return R::find('productcategory', 'order by id desc');
+        return R::find('productcategory', 'parentid = 0 order by id desc');
     }
     
     
