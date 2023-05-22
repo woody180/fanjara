@@ -5,6 +5,10 @@ use App\Engine\Libraries\Router;
 
 $router = Router::getInstance();
 
+$router->get('page/contact', function($req, $res) {
+    $res->render('contact');
+});
+
 $router->get('page/new',                'PageController@new', ['Middlewares/checkAdmin']);
 $router->post('page',                   'PageController@create', ['Middlewares/checkAdmin']);
 $router->get('page',                    'PageController@index', ['Middlewares/checkAdmin']);
