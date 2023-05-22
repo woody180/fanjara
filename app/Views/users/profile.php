@@ -45,7 +45,7 @@
                     </li>
                     <li>
                         <b>Group</b>: 
-                        <i><?= $user->usergroups->name ?></i>
+                        <i><?= $user->groups->name ?></i>
                     </li>
                 </ul>
             </div>
