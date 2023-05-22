@@ -21,7 +21,7 @@ class PageController {
                     'title|Title' => 'required|string|min[3]|max[100]',
                     'url|url' => 'min[3]|max[100]',
                     'description|Description' => 'string|max[200]',
-                    'type|Type' => 'alpha|min[4]|max[7]'
+                    'lang|Lanugage' => 'min[2]|max[2]|alpha'
                 ])
                 ->validate();
         
