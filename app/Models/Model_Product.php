@@ -30,9 +30,9 @@ class Model_Product extends RedBean_SimpleModel {
     
     public function show($url) {
         if (is_numeric($url)) {
-            return R::findOne('product', 'id = ?', [$url]) ?? abort();
+            return R::findOne('product', 'id = ? and lang = ?', [$url, $_SESSION['lang']]) ?? abort();
         } else {
-            return R::findOne('product', 'url = ?', [$url]) ?? abort();
+            return R::findOne('product', 'url = ? and lang = ?', [$url, $_SESSION['lang']]) ?? abort();
         }
     }
     
