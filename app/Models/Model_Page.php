@@ -45,7 +45,7 @@ class Model_Page extends RedBean_SimpleModel {
     
     public function getPage($url)
     {
-        if (is_string($url)) return R::findOne ('page', 'url = ?', [$url]) ?? abort();
+        if (is_string($url)) return R::findOne ('page', 'url = ? and lang = ?', [$url, $_SESSION['lang']]) ?? abort();
         return R::findOne('page', 'id = ? and lang = ?', [$url, $_SESSION['lang']]) ?? abort();
     }
     
