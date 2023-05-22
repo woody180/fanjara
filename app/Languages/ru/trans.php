@@ -21,5 +21,7 @@ return [
     'submit' => 'представлять на рассмотрение',
     'category' => 'Категория',
     'choose_product_category' => 'Выберите категорию продукта',
-    'add_product' => 'Добавить продукт'
+    'add_product' => 'Добавить продукт',
+    'body' => 'body',
+    'pages' => 'Страницы'
 ];
