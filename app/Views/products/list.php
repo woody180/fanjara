@@ -20,7 +20,7 @@
                             <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 16px]" class="uk-card-title">
                                 <a class="uk-link-reset" href="<?= baseUrl("product/{$product->url}") ?>"><?= $product->title ?></a>
                             </h3>
-                            <p class="uk-text-small"><?= $product->body ?></p>
+                            
                         </div>
                     </div>
                 </div>
