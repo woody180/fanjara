@@ -13,10 +13,10 @@
     <script src="<?= assetsUrl('js/uikit.min.js') ?>"></script>
     <script src="<?= assetsUrl('js/uikit-icons.min.js') ?>"></script>
     
-    <?= $this->section('scripts') ?>
+    <?= $this->section('scriptsHead') ?>
     
     <title><?= $title ?? APPNAME; ?></title>
 </head>
-<body>
+<body <?= $body_class ?? null ?>>
 
 <?php $this->insert('partials/header') ?>
