@@ -23,7 +23,10 @@
                     <div><?= $page->title ?></div>
                     
                     <div class="uk-flex">
-                        <a class="uk-icon-button uk-margin-small-right" href="<?= baseUrl("page/{$page->url}") ?>" uk-icon="icon: pencil;"></a>
+                        
+                        <span class="uk-icon-button uk-margin-small-right uk-text-xsmall uk-text-uppercase"><?= $page->lang ?></span>
+                        
+                        <a target="_blank" class="uk-icon-button uk-margin-small-right" href="<?= baseUrl("page/{$page->url}") ?>" uk-icon="icon: pencil;"></a>
                         
                         <form action="<?= baseUrl("page/{$page->id}") ?>" method="POST" onclick="return confirm('Are you sure?')">
                             <?= setMethod('delete') ?>
