@@ -24,5 +24,7 @@ return [
     'add_product' => 'Add product',
     'body' => 'Body',
     'pages' => 'Pages',
-    'description' => 'Description'
+    'description' => 'Description',
+    'type' => 'Type',
+    'page_type' => 'Page type',
 ];

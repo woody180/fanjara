@@ -24,5 +24,8 @@ return [
     'add_product' => 'პროდუქტის დამატება',
     'body' => 'კოკნტენტი',
     'pages' => 'გვერდები',
-    'description' => 'აღწერა'
+    'description' => 'აღწერა',
+    'type' => 'ტიპი',
+    'page_type' => 'გვერდის ტიპი',
+
 ];

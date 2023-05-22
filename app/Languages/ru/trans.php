@@ -24,5 +24,8 @@ return [
     'add_product' => 'Добавить продукт',
     'body' => 'body',
     'pages' => 'Страницы',
-    'description' => 'Описание'
+    'description' => 'Описание',
+    'type' => 'Тип',
+    'page_type' => 'Тип страницы',
+
 ];
