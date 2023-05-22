@@ -120,12 +120,6 @@
                 <?= show_error('error', 'gallery') ?>
             </div>
             
-            <div>
-                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.content') ?></label>
-                <textarea name="body" class="uk-textarea uk-height-small uk-border-rounded"><?= getForm('body') ?></textarea>
-                <?= show_error('error', 'body') ?>
-            </div>
-            
             
             <div>
                 <button class="uk-button uk-button-secondary uk-width-1-1"><?= App\Engine\Libraries\Languages::translate('trans.create') ?></button>
