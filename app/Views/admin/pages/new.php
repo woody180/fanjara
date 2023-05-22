@@ -4,6 +4,15 @@
 <?= $this->start('mainSection') ?>
 <section class="uk-section">
     <div class="uk-container min-height">
+        
+        
+        <?php if (hasFlashData('success')): ?>
+        <div class="uk-alert-success uk-margin-large-bottom uk-border-rounded" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><?= getFlashData('success') ?></p>
+        </div>
+        <?php endif; ?>
+        
 
         <form uk-grid class="uk-child-width-1-1" action="<?= baseUrl("page") ?>" method="POST">
             
@@ -20,6 +29,14 @@
                 <input type="text" name="url" class="uk-input uk-border-rounded" value="<?= getForm('url') ?>">
                 <?= show_error('error', 'url') ?>
             </div>
+            
+<!--            <div>
+                <label for="" class="uk-form-label"><?= ''//App\Engine\Libraries\Languages::translate('trans.page_type') ?></label>
+                <select class="uk-select uk-border-rounded" name="type">
+                    <option value="page">Page</option>
+                    <option value="product">Product</option>
+                </select>
+            </div>-->
 
             <div>
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.description') ?></label>
