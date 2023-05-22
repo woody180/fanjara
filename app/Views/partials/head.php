@@ -17,6 +17,6 @@
     
     <title><?= $title ?? APPNAME; ?></title>
 </head>
-<body <?= $body_class ?? null ?>>
+<body <?= isset($body_class) ? 'class="'.$body_class.'"' : null ?>>
 
 <?php $this->insert('partials/header') ?>
