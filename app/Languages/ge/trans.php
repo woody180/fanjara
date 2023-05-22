@@ -27,5 +27,5 @@ return [
     'description' => 'აღწერა',
     'type' => 'ტიპი',
     'page_type' => 'გვერდის ტიპი',
-
+    'set_language' => 'აირჩიე ენა'
 ];
