@@ -3,7 +3,7 @@
         <div class="uk-container">
             <div uk-grid class="uk-child-width-1-2 uk-grid-collapse">
                 <div>
-                    <div>თბილისი, კეკელიძის #2</div>
+                    <div>თბილისი, წერეთლის 87ზ</div>
                 </div>
 
                 <div>
@@ -21,7 +21,7 @@
 
                 <div class="uk-navbar-left">
                     <a href="<?= baseUrl() ?>" class="uk-display-block">
-                        <img src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="200" />
+                        <img src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="300" />
                     </a>
                 </div>
 
