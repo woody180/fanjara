@@ -11,7 +11,7 @@
                         <div>
                             <div>
                                 <div class="uk-first-column">
-                                    <img src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="200" />
+                                    <img src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="300" />
                                 </div>
                             </div>
 
@@ -34,12 +34,12 @@
                 </div>
                 
                 <div>
-                    <h3 class="uk-margin-remove"><?= App\Engine\Libraries\Languages::translate('trans.latest_news') ?></h3>
+                    <h3 class="uk-margin-remove">საჭირო ბმულები</h3>
                     <hr class="uk-divider-small">
                     <ul class="uk-list uk-list-divider uk-link-text">
-                        <li><a href="#">UBS rogue trader: 'It could happen again'<span class="uk-float-right uk-visible@m">August 2, 2019</span></a></li>
-                        <li><a href="#">Amazon boss Bezos becomes world's third richest<span class="uk-float-right uk-visible@m">July 22, 2019</span></a></li>
-                        <li><a href="#">Australia cuts interest rates to historic low<span class="uk-float-right uk-visible@m">July 15, 2019</span></a></li>
+                        <li><a href="#">საჭირო ბმული ერთი<span class="uk-float-right uk-visible@m"><span uk-icon="icon: arrow-right"></span></span></a></li>
+                        <li><a href="#">საჭირო ბმული ორი<span class="uk-float-right uk-visible@m"><span uk-icon="icon: arrow-right"></span></span></a></li>
+                        <li><a href="#">საჭირო ბმული სამი<span class="uk-float-right uk-visible@m"><span uk-icon="icon: arrow-right"></span></span></a></li>
                     </ul>
                 </div>
                 
@@ -83,6 +83,8 @@
     <?php if (checkAuth([1])): ?>
     <?= $this->insert('partials/admin_tools') ?>
     <?php endif; ?>
+
+    <script src="<?= assetsUrl("js/tinyeditorInit.js") ?>"></script>
 
 </body>
 </html>
