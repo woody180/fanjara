@@ -77,13 +77,13 @@ class Model_Page extends RedBean_SimpleModel {
     {
         $slugify = new Cocur\Slugify\Slugify();    
         
-        $page_placeholder = file_get_contents(APPROOT . "/Views/admin/pages/page_body_placeholder.html");
+        $page_placeholder = file_get_contents(APPROOT . "/Views/admin/placeholder_layouts/page_body_placeholder.html");
         
         $page = R::dispense('page');
         $page->title = $body['title'];
         $page->url = empty($body['url']) ? $slugify->slugify($body['title']) :  $slugify->slugify($body['url']);
         $page->description = $body['description'];
-        $page->body = file_get_contents(APPROOT . "/Views/admin/pages/page_body_placeholder.html");
+        $page->body = $page_placeholder;
         
         return R::store($page); // Returns page ID
     }
