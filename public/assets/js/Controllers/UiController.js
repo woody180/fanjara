@@ -28,7 +28,8 @@ export default class UiController extends SketchEngine {
 
     selectors = {
         navDropdown: '.uk-navbar-dropdown',
-        mobileNav: '#fg-mobile-nav ul'
+        mobileNav: '#fg-mobile-nav ul',
+        tinyArea: '.tiny-area'
     };
 
 

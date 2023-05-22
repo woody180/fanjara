@@ -1,6 +1,6 @@
 <?php namespace App\Controllers;
 
-
+use \R as R;
 
 class ProductcategoryController {
     
@@ -25,10 +25,16 @@ class ProductcategoryController {
     // Show view
     public function show($req, $res)
     {
-        return $res->render('products/list', [
-            'products' => initModel('Productcategory')
-                ->categoryProducts($req->getSegment(2))
-        ]);
+        initModel('productcategory');
+        
+        $cat = R::findOne('productcategory', 'url = ?', [$req->getSegment(2)]);
+        $catID = $cat->id;
+        
+        
+       return $res->render('products/list', [
+           'products' => initModel('Productcategory')
+               ->categoryProducts($req->getSegment(2))
+       ]);
     }
 
 

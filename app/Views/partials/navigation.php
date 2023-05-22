@@ -1,31 +1,56 @@
-<ul class="uk-navbar-nav">
-    <li class="uk-active"><a href="<?= baseUrl() ?>">მთავარი</a></li>
-    <li>
-        <a href="#">პროდუქცია <span uk-navbar-parent-icon></span> </a>
-        <div class="uk-navbar-dropdown">
-            <ul class="uk-nav uk-navbar-dropdown-nav">
-                <?php foreach (initModel('Productcategory')->list() as $pc): ?>
-                <li><a href="<?= baseUrl("productcategory/{$pc->url}") ?>"><?= $pc->title ?></a></li>
+<div class="uk-flex uk-flex-middle" data-responsive="max-width[<?= M_WIDTH ?>]; style[display: block;]">
+    <ul class="uk-navbar-nav">
+        <li class="uk-active"><a href="<?= baseUrl() ?>">მთავარი</a></li>
+        <li>
+            <a href="#">პროდუქცია <span uk-navbar-parent-icon></span> </a>
+            <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <?php foreach (initModel('Productcategory')->list() as $pc): ?>
+                    <li><a href="<?= baseUrl("productcategory/{$pc->url}") ?>"><?= $pc->title ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </li>
+        <li><a href="<?= baseUrl("get-in-touch") ?>">სერვისი <span uk-navbar-parent-icon></span> </a>
+            <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li><a href="<?= baseUrl("page/consulting") ?>">კონსულტაცია</a></li>
+                    <li><a href="<?= baseUrl("page/projects") ?>">პროექტები</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="<?= baseUrl("get-in-touch") ?>">კომპანია <span uk-navbar-parent-icon></span></a>
+            <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li><a href="<?= baseUrl("page/about") ?>">ჩვენს შესახებ</a></li>
+                    <li><a href="<?= baseUrl("page/vacancies") ?>">ვაკანსია</a></li>
+                    <li><a href="<?= baseUrl("page/partners") ?>">პარტნიორები</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="uk-active"><a href="<?= baseUrl("page/contact") ?>">კონტაქტი</a></li>
+    </ul>
+
+
+    <div class="uk-margin-left uk-visible@m">
+        <a href="#" class="uk-button fj-lang-switch-btn">
+            <span><?= \App\Engine\Libraries\Languages::active() ?></span>
+        </a>
+        
+        <div class="uk-position-absolute uk-width-small uk-card uk-padding-small uk-card-default uk-position-z-index uk-overflow-hidden uk-border-rounde uk-margin-top" id="language-switcher-list" uk-dropdown="mode: click">
+            <ul class="uk-list uk-list-divider uk-margin-remove">
+                <?php foreach (\App\Engine\Libraries\Languages::list() as $lang): ?>
+                    <li>
+                        <a href="<?= baseUrl("language/switch/{$lang->code}") ?>" class="uk-flex uk-flex-between uk-flex-middle">
+                            <div class="lf"><?= img(['src' => "images/flags/{$lang->code}.png", 'width' => 22]) ?></div>
+                            <div class="lc uk-text-uppercase uk-text-small"><?= $lang->code ?></div>
+                        </a>
+                    </li>
                 <?php endforeach; ?>
             </ul>
+
         </div>
-    </li>
-    <li><a href="<?= baseUrl("get-in-touch") ?>">სერვისი <span uk-navbar-parent-icon></span> </a>
-        <div class="uk-navbar-dropdown">
-            <ul class="uk-nav uk-navbar-dropdown-nav">
-                <li><a href="<?= baseUrl("page/consulting") ?>">კონსულტაცია</a></li>
-                <li><a href="<?= baseUrl("page/projects") ?>">პროექტები</a></li>
-            </ul>
-        </div>
-    </li>
-    <li><a href="<?= baseUrl("get-in-touch") ?>">კომპანია <span uk-navbar-parent-icon></span></a>
-        <div class="uk-navbar-dropdown">
-            <ul class="uk-nav uk-navbar-dropdown-nav">
-                <li><a href="<?= baseUrl("page/about") ?>">ჩვენს შესახებ</a></li>
-                <li><a href="<?= baseUrl("page/vacancies") ?>">ვაკანსია</a></li>
-                <li><a href="<?= baseUrl("page/partners") ?>">პარტნიორები</a></li>
-            </ul>
-        </div>
-    </li>
-    <li class="uk-active"><a href="<?= baseUrl("page/contact") ?>">კონტაქტი</a></li>
-</ul>
+        
+    </div>
+
+</div>
