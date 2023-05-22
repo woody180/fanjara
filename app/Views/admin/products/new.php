@@ -55,6 +55,16 @@
             
             
             <div>
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.set_language') ?></label>
+                <select name="lang" id="" class="uk-select uk-border-rounded">
+                    <?php foreach (\App\Engine\Libraries\Languages::list() as $lng): ?>
+                    <option value="<?= $lng->code ?>"><?= ucfirst($lng->language) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            
+            
+            <div>
                 <div>
                  
                     <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.choose_product_category') ?></label>
