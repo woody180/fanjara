@@ -23,5 +23,6 @@ return [
     'choose_product_category' => 'Выберите категорию продукта',
     'add_product' => 'Добавить продукт',
     'body' => 'body',
-    'pages' => 'Страницы'
+    'pages' => 'Страницы',
+    'description' => 'Описание'
 ];

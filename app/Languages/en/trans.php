@@ -23,5 +23,6 @@ return [
     'choose_product_category' => 'Choose product category',
     'add_product' => 'Add product',
     'body' => 'Body',
-    'pages' => 'Pages'
+    'pages' => 'Pages',
+    'description' => 'Description'
 ];

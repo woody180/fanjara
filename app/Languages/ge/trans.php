@@ -23,5 +23,6 @@ return [
     'choose_product_category' => 'აირჩიე პროდუქტის კატეგორია',
     'add_product' => 'პროდუქტის დამატება',
     'body' => 'კოკნტენტი',
-    'pages' => 'გვერდები'
+    'pages' => 'გვერდები',
+    'description' => 'აღწერა'
 ];
