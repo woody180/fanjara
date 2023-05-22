@@ -89,7 +89,9 @@ function filemanager(callback) {
 
 
 // Close elFinder
-$('body').on('click', '.pb-fm-close', function(e) {
-    $('.filemanager-container').remove();
-    window.history.pushState({}, '', location.origin + location.pathname + location.search)
-})
+window.onload = function(){
+    $('body').on('click', '.pb-fm-close', function(e) {
+        $('.filemanager-container').remove();
+        window.history.pushState({}, '', location.origin + location.pathname + location.search)
+    });
+};
