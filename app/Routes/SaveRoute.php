@@ -23,7 +23,7 @@ $router->patch('save', function($req, $res) {
     $row            = $aliasArr[2]; // Row where content is going to be changed
     
     // Find page to be updated
-    $page = R::findOne($table, "id = ?", [$id]);
+    $page = R::findOne($table, "id = ? and lang = ?", [$id, $_SESSION['lang']]);
     
     
     // If page not found
