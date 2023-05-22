@@ -81,6 +81,7 @@ class Model_Installer extends RedBean_SimpleModel {
             'url' => 'url',
             'banner' => 'banner',
             'description' => 'description',
+            'parentid' => 1
         ]);
         
         $product->import([
