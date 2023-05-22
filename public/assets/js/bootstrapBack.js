@@ -5,7 +5,7 @@ if (document.body.classList.contains('init-tinyeditor')) {
     new FgTinyEditor({
         selector: '.editable',
         rootPath: baseurl + '/assets/tinyeditor',
-        saveUrl: baseurl + '/' + 'save',
+        saveUrl: baseurl + '/' + document.documentElement.lang + '/' + 'save',
         defaultTools: true, // Default is true
         loadjQuery: true
     });
