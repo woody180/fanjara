@@ -42,6 +42,48 @@
             </div>
         </div>
         
+        
+        <div data-style="margin-bottom: -145px;" class="uk-margin-medium-top uk-card uk-card-default uk-card-body upper uk-border-rounded uk-width-2-3@l uk-width-1-2@m uk-margin-auto">
+            <p class="uk-text-bold"><?= App\Engine\Libraries\Languages::translate('trans.info') ?></p>
+                    
+            <ul class="uk-list uk-list-striped">
+                <li>
+                    <div class="uk-flex uk-flex-middle uk-flex-top">
+                        <span uk-icon="icon: receiver" class="uk-display-inline-block uk-margin-right"></span>
+                        <span class="uk-text-small">+995(32) 223 80 60</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="uk-flex uk-flex-middle uk-flex-top">
+                        <span uk-icon="icon: mail" class="uk-display-inline-block uk-margin-right"></span>
+                        <span class="uk-text-small">info@fanjara.ge</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="uk-flex uk-flex-middle uk-flex-top">
+                        <span uk-icon="icon: location" class="uk-display-inline-block uk-margin-right"></span>
+                        <span class="uk-text-small">თბილისი, კეკელიძის #2</span>
+                    </div>
+                </li>
+            </ul>
+
+
+            <p class="uk-margin-small uk-text-small">
+                <?=
+                    App\Engine\Libraries\Languages::translate([
+                        'en' => 'Visit our office for complete information and to place an order.',
+                        'ge' => 'ამომწურავი ინფორმაციის მისაღებად და შეკვეთის გასაფორმებლად გვესტუმრეთ ოფისში.',
+                        'ru' => 'Посетите наш офис для получения полной информации и оформления заказа.',
+                    ]);
+                ?>
+            </p>
+            <hr class="uk-divider-small">
+            <p class="uk-margin-small uk-text-small">ორ.-შაბ. 10:00-19:00 სთ.</p>
+            <p class="uk-margin-small uk-text-small">კვირა 11:00-16:00 სთ.</p>
+        </div>
+        
     </div>
 </section>
 
