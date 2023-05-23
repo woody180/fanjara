@@ -93,6 +93,7 @@ class Model_Installer extends RedBean_SimpleModel {
             'thumbnail' => 'thumbnail',
             'gallery' => 'gallery',
             'body' => 'body',
+            'details' => 'details',
             'constructorurl' => 'contructorurl',
             'lang' => 'lg',
             'createdat' => time(),
