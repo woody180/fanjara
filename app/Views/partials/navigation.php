@@ -1,8 +1,8 @@
 <div class="uk-flex uk-flex-middle" data-responsive="max-width[<?= M_WIDTH ?>]; style[display: block;]">
     <ul class="uk-navbar-nav">
-        <li class="uk-active"><a href="<?= baseUrl() ?>">მთავარი</a></li>
+        <li class="uk-active"><a class="ln-parse" href="<?= baseUrl() ?>">{{[en="Home"][ge="მთავარი"][ru="Главная страница"]}}</a></li>
         <li>
-            <a href="#">პროდუქცია <span uk-navbar-parent-icon></span> </a>
+            <a href="#">{{ [ge="პროდუქცია"][en="Products"][ru="Продукты"] }} <span uk-navbar-parent-icon></span> </a>
             <div class="uk-navbar-dropdown">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
                     <?php foreach (initModel('Productcategory')->list() as $pc): ?>
@@ -11,24 +11,24 @@
                 </ul>
             </div>
         </li>
-        <li><a href="<?= baseUrl("get-in-touch") ?>">სერვისი <span uk-navbar-parent-icon></span> </a>
+        <li><a href="#"> <span class="ln-parse">{{[en="Services"][ge="სერვისი"][ru="Сервисы"]}}</span> <span uk-navbar-parent-icon></span> </a>
             <div class="uk-navbar-dropdown">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li><a href="<?= baseUrl("page/consulting") ?>">კონსულტაცია</a></li>
-                    <li><a href="<?= baseUrl("page/projects") ?>">პროექტები</a></li>
+                    <li><a href="<?= baseUrl("page/consulting") ?>" class="ln-parse">{{ [en="Consulting"][ge="კონსულტაცია"][ru="Консультация"] }}</a></li>
+                    <li><a href="<?= baseUrl("page/projects") ?>">{{ [en="Projects"][ge="პროექტები"][ru="проекты"] }}</a></li>
                 </ul>
             </div>
         </li>
-        <li><a href="<?= baseUrl("get-in-touch") ?>">კომპანია <span uk-navbar-parent-icon></span></a>
+        <li><a href="#">{{[ge="კომპანია"][en="Company"][ru="Компания"]}} <span uk-navbar-parent-icon></span></a>
             <div class="uk-navbar-dropdown">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li><a href="<?= baseUrl("page/about") ?>">ჩვენს შესახებ</a></li>
-                    <li><a href="<?= baseUrl("page/vacancies") ?>">ვაკანსია</a></li>
-                    <li><a href="<?= baseUrl("page/partners") ?>">პარტნიორები</a></li>
+                    <li><a href="<?= baseUrl("page/about") ?>">{{ [ge="ჩვენს შესახებ"][en="About us"][ru="О нас"] }}</a></li>
+                    <li><a href="<?= baseUrl("page/vacancies") ?>">{{ [ge="ვაკანსია"][en="Vacancy"][ru="Вакансия"] }}</a></li>
+                    <li><a href="<?= baseUrl("page/partners") ?>">{{ [ge="პარტნიორები"][en="Partners"][ru="Партнеры"] }}</a></li>
                 </ul>
             </div>
         </li>
-        <li class="uk-active"><a href="<?= baseUrl("page/contact") ?>">კონტაქტი</a></li>
+        <li class="uk-active"><a href="<?= baseUrl("page/contact") ?>">{{ [ge="კონტაქტი"][en="Contact us"][ru="Связаться с нами"] }}</a></li>
     </ul>
 
 
