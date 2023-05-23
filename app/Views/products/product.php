@@ -11,7 +11,7 @@
 <?php $this->start('mainSection') ?>
 
 <section class="uk-section">
-    <div class="uk-container uk-container-small min-height">
+    <div class="uk-container min-height">
         
         <div>
             
@@ -55,7 +55,7 @@
             <a target="_blank" href="<?= baseUrl("product/{$product->id}/edit") ?>" uk-icon="icon: pencil;" class="uk-icon-button uk-position-absolute uk-position-left-top uk-position-z-index"></a>
             <?php endif; ?>
             
-            <div class="fg-product-gallery uk-container uk-container-small">
+            <div class="fg-product-gallery uk-container uk-margin-medium-top">
                 <div class="uk-child-width-1-3@m uk-grid-medium" uk-grid uk-lightbox="animation: slide">
                     <?php foreach (explode(',', $product->gallery) as $item): ?>
                     <div>
