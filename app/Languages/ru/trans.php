@@ -27,5 +27,6 @@ return [
     'description' => 'Описание',
     'type' => 'Тип',
     'page_type' => 'Тип страницы',
-    'set_language' => 'Установить язык'
+    'set_language' => 'Установить язык',
+    'details' => 'Подробности',
 ];

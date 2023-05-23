@@ -27,5 +27,6 @@ return [
     'description' => 'Description',
     'type' => 'Type',
     'page_type' => 'Page type',
-    'set_language' => 'Set language'
+    'set_language' => 'Set language',
+    'details' => 'Details',
 ];
