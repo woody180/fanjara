@@ -29,4 +29,5 @@ return [
     'page_type' => 'Page type',
     'set_language' => 'Set language',
     'details' => 'Details',
+    'update' => 'Update'
 ];

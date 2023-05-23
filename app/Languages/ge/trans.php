@@ -29,4 +29,5 @@ return [
     'page_type' => 'გვერდის ტიპი',
     'set_language' => 'აირჩიე ენა',
     'details' => 'დეტალები',
+    'update' => 'განახლება'
 ];
