@@ -87,7 +87,7 @@
                     <input hidden id="thumb" type="file" name="thumbnail" value="">
                     <input hidden type="text" name="thumbnail" value="<?= $product->thumbnail ?>">
 
-                    <div class="uk-width-1-1 uk-card uk-border-rounded uk-overflow-hidden" style="border: 1px solid #e5e5e5; height: 95px;">
+                    <div class="uk-width-1-1 uk-card uk-border-rounded uk-overflow-hidden" style="border: 1px solid #e5e5e5; height: 195px;">
 
                         <a id="fj-remove-thumb" href="#" uk-icon="icon: close;" class="uk-icon-button uk-position-top-right uk-margin-right uk-margin-top uk-position-z-index"></a>
 
@@ -128,7 +128,7 @@
             
             
             <div>
-                <button class="uk-button uk-button-secondary uk-width-1-1"><?= App\Engine\Libraries\Languages::translate('trans.create') ?></button>
+                <button class="uk-button uk-button-secondary uk-width-1-1"><?= App\Engine\Libraries\Languages::translate('trans.update') ?></button>
             </div>
             
         </form>
