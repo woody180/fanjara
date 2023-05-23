@@ -64,7 +64,7 @@
                 <li>
                     <div class="uk-flex uk-flex-middle uk-flex-top">
                         <span uk-icon="icon: location" class="uk-display-inline-block uk-margin-right"></span>
-                        <span class="uk-text-small">თბილისი, კეკელიძის #2</span>
+                        <span class="uk-text-small">თბილისი, წერეთლის N87ზ</span>
                     </div>
                 </li>
             </ul>
