@@ -19,7 +19,8 @@ export default class UiController extends SketchEngine {
         'bgColor',
         'styles',
         'mobileNav',
-        'responsive'
+        'responsive',
+        'languageParser'
     ];
 
 
@@ -29,7 +30,8 @@ export default class UiController extends SketchEngine {
     selectors = {
         navDropdown: '.uk-navbar-dropdown',
         mobileNav: '#fg-mobile-nav ul',
-        tinyArea: '.tiny-area'
+        tinyArea: '.tiny-area',
+        navItem: '.uk-navbar-nav li a' // Items to translate
     };
 
 
@@ -43,6 +45,30 @@ export default class UiController extends SketchEngine {
 
 
     functions = {
+        
+        languageParser()
+        {
+            const langTag = document.documentElement.lang;
+            const re = new RegExp(`\\[${langTag}\\=\\"(.*?)\\"\\]`, "gim");
+            
+            document.querySelectorAll(this.selectors.navItem).forEach(item => {
+                const res = item.innerText.match(/{{(.*)}}/i);
+                if (res) {
+                    const word = res[1].match(re)[0].match(/\"(.*)\"/i)[1];
+                    if (item.childElementCount > 0) {
+                        Array.from(item.children).forEach(el => {
+                            const cloned = el.cloneNode(true);
+                            item.textContent = word;
+                            item.appendChild(cloned);
+                        });
+                    } else {
+                        item.textContent = word;
+                    }
+                }
+            });
+        },
+        
+        
         bgImage() {
             
             document.querySelectorAll('[data-bg]').forEach(bg => {
