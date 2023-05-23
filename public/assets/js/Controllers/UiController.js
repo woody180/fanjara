@@ -31,7 +31,7 @@ export default class UiController extends SketchEngine {
         navDropdown: '.uk-navbar-dropdown',
         mobileNav: '#fg-mobile-nav ul',
         tinyArea: '.tiny-area',
-        navItem: '.uk-navbar-nav li a' // Items to translate
+        navItem: '#fj-navigation > ul li a' // Items to translate
     };
 
 
