@@ -35,7 +35,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
     
     public function categoryProducts(string $url)
     {
-        $category = R::findOne('productcategory', 'url = ?', [$url]) ?? abort();
+        $category = R::findOne('productcategory', 'url = ? and lang = ?', [$url, $_SESSION['lang']]) ?? abort();
         $totalPages = $category->countShared('product');
         $currentPage = $_GET["page"] ?? 1;
         if ($currentPage < 1 OR $currentPage > $totalPages) $currentPage = 1;
