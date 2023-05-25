@@ -32,5 +32,7 @@ return [
     'update' => 'Обновить',
     'configurator' => 'Конфигуратор',
     'edit' => 'Редактировать',
-    'projects_not_found' => 'Проекты не найдены'
+    'projects_not_found' => 'Проекты не найдены',
+    'add_project' => 'Добавить проект',
+    'edit_project' => 'Изменить проект'
 ];

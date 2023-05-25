@@ -32,5 +32,7 @@ return [
     'update' => 'Update',
     'configurator' => 'Configurator',
     'edit' => 'Edit',
-    'projects_not_found' => 'Project not found'
+    'projects_not_found' => 'Project not found',
+    'add_project' => 'Add project',
+    'edit_project' => 'Edit project'
 ];
