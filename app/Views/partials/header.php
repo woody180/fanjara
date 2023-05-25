@@ -3,7 +3,13 @@
         <div class="uk-container">
             <div uk-grid class="uk-child-width-1-2 uk-grid-collapse">
                 <div>
-                    <div>თბილისი, წერეთლის 87ზ</div>
+                    <div>
+                        <?= App\Engine\Libraries\Languages::translate([
+                            'ge' => 'თბილისი, წერეთლის 87ზ',
+                            'en' => 'Tbilisi, Tsereteli 87Z',
+                            'ru' => 'Тбилиси, Церетели 87з',
+                        ]) ?>
+                    </div>
                 </div>
 
                 <div>
