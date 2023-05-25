@@ -123,7 +123,29 @@
 
 
 // FOOTER
+.fj-footer-columns {
+    
+    @include mScreen {
+        & > * {
+            float: left;
+            width: 45% !important;
+        }
 
+        & > *:first-child {
+            margin-right: 5%;
+        }
+
+        &::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+    
+    & > *:first-child {
+        margin-bottom: 25px;
+    }
+}
 
 
 
