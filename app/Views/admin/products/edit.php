@@ -1,4 +1,13 @@
-<?php $this->layout('partials/template') ?>
+<?php $this->layout('partials/template', [
+    'body_class' => 'init-tinyeditor'
+]) ?>
+
+
+<?= $this->start('scriptsHead') ?>
+<script src="<?= assetsUrl('tinyeditor/tinyeditor.js') ?>"></script>
+<?= $this->stop() ?>
+
+
 
 <?= $this->start('mainSection') ?>
 
