@@ -41,7 +41,11 @@
                         <li>
                             <div class="uk-flex uk-flex-middle uk-flex-top">
                                 <span uk-icon="icon: location" class="uk-display-inline-block uk-margin-right"></span>
-                                <span class="uk-text-small">თბილისი, წერეთლის N87ზ</span>
+                                <span class="uk-text-small"><?= App\Engine\Libraries\Languages::translate([
+                            'ge' => 'თბილისი, წერეთლის 87ზ',
+                            'en' => 'Tbilisi, Tsereteli 87Z',
+                            'ru' => 'Тбилиси, Церетели 87з',
+                        ]) ?></span>
                             </div>
                         </li>
                     </ul>
@@ -57,8 +61,16 @@
                         ?>
                     </p>
                     <hr class="uk-divider-small">
-                    <p class="uk-margin-small uk-text-small">ორ.-შაბ. 10:00-19:00 სთ.</p>
-                    <p class="uk-margin-small uk-text-small">კვირა 11:00-16:00 სთ.</p>
+                    <p class="uk-margin-small uk-text-small"><?= App\Engine\Libraries\Languages::translate([
+                            'ge' => 'ორ.-შაბ. 10:00-19:00 სთ.',
+                            'en' => 'Mon.-Sat. 10:00-19:00 h.',
+                            'ru' => 'Пн.-Сб. 10:00-19:00',
+                        ]) ?></p>
+                    <p class="uk-margin-small uk-text-small"><?= App\Engine\Libraries\Languages::translate([
+                            'ge' => 'კვირა 11:00-16:00 სთ.',
+                            'en' => 'Sunday 11:00-16:00.',
+                            'ru' => 'Воскресенье 11:00-16:00.',
+                        ]) ?></p>
                 </div>
             </div>
             
