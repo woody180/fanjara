@@ -33,11 +33,28 @@
         
         <div class="uk-text-center uk-text-small uk-card uk-card-body uk-border-rounded uk-width-3-4@m uk-margin-auto">
             <div class="uk-margin-medium-bottom">
-                <h1>როგორია თქვენი მოთხოვნები?</h1>
+                <h1>
+                    <?= App\Engine\Libraries\Languages::translate([
+                        'ge' => 'ჩვენ შესახებ',
+                        'en' => 'About us',
+                        'ru' => 'О нас',
+                    ]) ?>
+                </h1>
                 <hr class="uk-divider-small">
-                <p class="uk-margin-small">ყოველი ჩვენგანი ხომ გამორჩეულია, განსხვავებულია პრიორიტეტებით, თავისი ოცნებებით და სურვილებით.</p>
-                <p class="uk-margin-small">ასეთივე ნაირფეროვანია ჩვენთან არჩევანი.</p>
-                <p class="uk-margin-small">მოგვეცით საშუალება თქვენი სახლისგან მეტი კომფორტის და სიამოვნების მიღება შთაგაგონოთ.</p>
+                <p>
+                    <?= App\Engine\Libraries\Languages::translate([
+                        'ge' => 'კომპანია “ა-ვე ლუქსი” პროფესიონალთა გუნდმა დააარსა. აველუქსმა ბინა ვაკეში, კეკელიძის No2-ში დაიდო. კომპანიამ პირველივე დღიდან აქცენტი ისეთი მაღალხარისხიანი პროდუქციის წარმოებაზე გააკეთა, როგორიცაა გერმანული მეტალოპლასმასის კარ-ფანჯარა რეჰაუ. 2009 წელს კომპანიას მიენიჭა REHAU-ს ლიცენზირებული მწარმოებლის სტატუსი (#63762901), რაც იმას ნიშნავს რომ აქ ვერ შეხვდებით ფალსიფიკაციას. აბსოლუტურად ყველა ფანჯარა კომპლექტდება REHAU-ს 1,5 ან 2,0 მმ-იანი არმირებით და REHAU-ს შემამჭიდროვებლებით (რეზინით), რომელიც უნიკალური ტექნოლოგიის წყალობით, მაქსიმალური ჰერმეტულობის გარანტიაა.',
+                        'en' => 'The company "A-ve Lux" was founded by a team of professionals. Avelux placed an apartment in Vake, Kekelidze No. 2. From the very first day, the company focused on the production of such high-quality products as German metalloplasma door-window Rehau. In 2009, the company was granted the status of REHAU licensed manufacturer (#63762901), which means that you will not encounter counterfeits here. Absolutely all windows are equipped with REHAU 1.5 or 2.0 mm reinforcements and REHAU sealings (rubber), which, thanks to the unique technology, guarantee maximum tightness.',
+                        'ru' => 'Компания «А-ве Люкс» была основана командой профессионалов. Avelux разместил квартиру в Ваке, Кекелидзе №2. С самого первого дня компания сосредоточилась на выпуске такой качественной продукции, как немецкие металлоплазменные двери-окна Rehau. В 2009 году компания получила статус лицензированного производителя REHAU (#63762901), а это значит, что с подделками вы здесь не столкнетесь. Абсолютно все окна оснащены армированием REHAU 1,5 или 2,0 мм и уплотнителями REHAU (резиновыми), которые благодаря уникальной технологии гарантируют максимальную герметичность.',
+                    ]) ?>
+                </p>
+                
+                <div class="uk-flex uk-flex-center">
+                    <a href="<?= baseUrl("page/about") ?>" class="uk-button-icon uk-button-icon-right">
+                        <span uk-icon="icon: arrow-right;"></span>
+                        <span><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                    </a>
+                </div>
             </div>
         </div>
 
