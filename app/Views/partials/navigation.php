@@ -16,7 +16,7 @@
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="<?= baseUrl("page/consulting") ?>" class="ln-parse">{{ [en="Consulting"][ge="კონსულტაცია"][ru="Консультация"] }}</a></li>
-                        <li><a href="<?= baseUrl("page/projects") ?>">{{ [en="Projects"][ge="პროექტები"][ru="проекты"] }}</a></li>
+                        <li><a href="<?= baseUrl("projects") ?>">{{ [en="Projects"][ge="პროექტები"][ru="проекты"] }}</a></li>
                     </ul>
                 </div>
             </li>
