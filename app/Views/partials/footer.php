@@ -11,54 +11,79 @@
                         <div>
                             <div>
                                 <div class="uk-first-column">
-                                    <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo.png") ?>" alt="<?= APPNAME ?>" width="300" />
+                                    <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo-light.png") ?>" alt="<?= APPNAME ?>" width="300" />
                                 </div>
                             </div>
 
-                            <p>Imperium Tower - 15 Kuningan Raya 54th Street<br>14th Floor, Jakarta, DKI 10220, Indonesia</p>
+                            <p>
+                                <?=
+                                    App\Engine\Libraries\Languages::translate([
+                                        'ge' => 'წარმოებაში დანერგილი მაღალი სტანდარტის გამო, 2009 წლიდან დღემდე, <br>რეჰაუ ყოველწლიურად გვანიჭებს ოფიციალური პარტნიორის წოდებას.',
+                                        'ru' => 'Благодаря высокому стандарту, внедренному в производство, с 2009 года по настоящее время <br>Rehau ежегодно присуждает нам звание официального партнера.',
+                                        'en' => 'Due to the high standard introduced in production, since 2009 until now, <br>Rehau has awarded us the title of official partner every year.',
+                                    ]);
+                                ?>
+                            </p>
                         </div>
 
                         <div>
                              <span class="uk-label uk-margin-small-right in-margin-bottom@s">
                                 <span class="uk-margin-small-right uk-icon" uk-icon="icon: phone; ratio: .7"></span>
-                                1-800-123-4567
+                                <a class="uk-link-reset" href="tel:+995(32)2238060">+995 (32) 223 80 60</a>
                             </span>
 
                             <span class="uk-label in-margin-bottom@s">
                                 <span class="uk-margin-small-right uk-icon" uk-icon="icon: mail; ratio: .7"></span>
-                                info@fanjara.ge
+                                <a class="uk-link-reset" href="mailto:info@fanjara.ge">info@fanjara.ge</a>
                             </span>
                         </div>
                         
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="uk-margin-remove">საჭირო ბმულები</h3>
-                    <hr class="uk-divider-small">
-                    <ul class="uk-list uk-list-divider uk-link-text">
-                        <li><a href="#">საჭირო ბმული ერთი<span class="uk-float-right uk-visible@m"><span uk-icon="icon: arrow-right"></span></span></a></li>
-                        <li><a href="#">საჭირო ბმული ორი<span class="uk-float-right uk-visible@m"><span uk-icon="icon: arrow-right"></span></span></a></li>
-                        <li><a href="#">საჭირო ბმული სამი<span class="uk-float-right uk-visible@m"><span uk-icon="icon: arrow-right"></span></span></a></li>
-                    </ul>
+                <div class="fj-footer-columns">
+                    <div>
+                        <div class="uk-list uk-list-divider uk-margin-remove">
+                            <?php foreach (initModel('Productcategory')->list() as $pcl): ?>
+                            <li>
+                                <a href="<?= baseUrl("productcategory/{$pcl->url}") ?>"><?= $pcl->title ?></a>
+                            </li>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="uk-list uk-list-divider uk-margin-remove">
+                            <li>
+                                <a href="<?= baseUrl('page/about') ?>">
+                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'ჩვენ შესახებ', 'en' => 'About us', 'ru' => 'О нас']) ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= baseUrl('page/vacancies') ?>">
+                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'ვაკანსია', 'en' => 'Vacancy', 'ru' => 'Вакансия']) ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= baseUrl('page/vacancies') ?>">
+                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'პარტნიორები', 'en' => 'Partners', 'ru' => 'Партнеры']) ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= baseUrl('page/vacancies') ?>">
+                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'კონსულტაცია', 'en' => 'Consulting', 'ru' => 'Консалтинг']) ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= baseUrl('page/projects') ?>">
+                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'პროექტები', 'en' => 'Projects', 'ru' => 'Проекты']) ?>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="uk-width-1-1 uk-grid-margin uk-first-column">
-                    <hr class="uk-margin-top uk-margin-medium-bottom">
-                    <div class="uk-child-width-1-1 uk-child-width-1-2@m in-footer-subnav uk-grid" data-uk-grid="">
-                        <div class="uk-visible@m uk-first-column">
-                            <ul class="uk-subnav" data-uk-margin="">
-                                <li class="uk-first-column"><a href="#">Contact Us</a></li>
-                                <li><a href="#">Term of Services</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Site Map</a></li>
-                            </ul>
-                        </div>
-                        <div class="uk-text-center uk-text-right@m">
-                            <p>fanjara.ge © 2022 All rights reserved</p>
-                        </div>
-                    </div>          
-                </div>
+           
             </div>
             <!-- footer content end -->
         </div>
