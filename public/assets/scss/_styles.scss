@@ -205,3 +205,63 @@
         max-width: 100%;
     }
 }
+
+
+
+// PROJECTS SECTION
+#projects-section {
+    .uk-card {
+        height: 240px;
+        background: radial-gradient(#ddd777, #bbb65d);
+        
+        .uk-icon {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            color: #dfdb92;
+        }
+        
+        h3 {
+            position: relative;
+            z-index: 3;
+            font-size: 23px;
+            color: #444230;
+            text-shadow: 0 0 35px #ece57a;
+        }
+    }
+    
+    
+    .fj-lightbox-link {
+        display: block;
+        overflow: hidden;
+        border-radius: 3px;
+        height: 220px;
+        
+        @media screen and (max-width: $m-screen) {
+            height: 160px;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+.fg-project-dir {
+    overflow: hidden;
+    img {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        z-index: 0;
+    }
+}
