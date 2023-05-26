@@ -65,7 +65,7 @@
             
             <div class="uk-width-2-3@m">
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.thumbnail') ?></label>
-                <input id="fg-product-category-thumbnail-hidden" type="hidden" name="thumbnail" value="<?= getForm('thumbnail') ?>">
+                <input id="fg-product-category-thumbnail-hidden" type="hidden" name="banner" value="<?= getForm('banner') ?>">
                 
                 <div id="fg-product-category-thumbnail-button" class="js-upload uk-placeholder uk-text-center uk-margin-remove uk-cursor-pointer">
                     <span uk-icon="icon: cloud-upload"></span>
@@ -73,7 +73,7 @@
                         <span class="uk-link">Upload gallery files from here</span>
                     </div>
                 </div>
-                <?= show_error('error', 'thumbnail') ?>
+                <?= show_error('error', 'banner') ?>
             </div>
             
             
@@ -83,7 +83,7 @@
                     
                     <a href="#" uk-icon="icon: trash" class="prouct-category-preview-remove uk-icon-button uk-position-top-right uk-margin-small-right uk-margin-small-top"></a>
                     
-                    <?= img(['src' => getForm('thumbnail') ?? 'some.png', 'class' => 'uk-object-cover uk-width-1-1']) ?>
+                    <?= img(['src' => getForm('banner') ?? 'some.png', 'class' => 'uk-object-cover uk-width-1-1']) ?>
                 </div>
             </div>
             
