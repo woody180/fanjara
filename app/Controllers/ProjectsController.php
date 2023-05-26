@@ -88,6 +88,12 @@ class ProjectsController {
     // Delete
     public function delete($req, $res) {
         $id = $req->getSegment(2);
+        
+        initModel('projects');
+        
+        R::trash('projects', $id);
+        
+        return $res->redirectBack();
     }
 
 }
