@@ -75,9 +75,10 @@ class ProjectsController {
 
     // Update
     public function update($req, $res) {
-        
-        $project = initModel('projects')->getProject($req->getSegment(2));
-        $project->import($req->body());
+        $body = $req->body();
+        $body['lang'] = $_SESSION['lang'];
+        $project = initModel('projects')->getProjet($req->getSegment(2));
+        $project->import($body);
         R::store($project);
 
         return $res->redirectBack();

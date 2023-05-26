@@ -13,4 +13,6 @@ if (document.body.classList.contains('init-tinyeditor')) {
 
 
 import ProductController from './Controllers/ProductController.js';
+import ProjectController from './Controllers/ProjectController.js';
 new ProductController({baseurl});
+new ProjectController({baseurl});
