@@ -14,7 +14,14 @@
                 <div>
                     <div class="fg-project-dir uk-card uk-card-hover uk-background-default uk-border-rounded uk-card-body uk-position-relative">
                         
-                        <a href="<?= baseUrl("projects/{$project->id}/edit") ?>" uk-icon="icon: pencil;" uk-tooltip="Edit" class="uk-icon-button uk-position-z-index uk-position-top-left uk-margin-left uk-margin-top"></a>
+                        <div class="admin-buttons">
+                            <a href="<?= baseUrl("projects/{$project->id}/edit") ?>" uk-icon="icon: pencil;" uk-tooltip="pos: right; title: Edit;" class="uk-icon-button"></a>
+                            
+                            <form method="POST" action="<?= baseUrl("projects/{$project->id}") ?>" uk-icon="icon: trash;" uk-tooltip="pos: right; title: Delete;" class="uk-icon-button uk-cursor-pointer">
+                                <?= setMethod('delete') ?>
+                                <button onclick="return confirm('Are you sure?')" type="submit"></button>
+                            </form>
+                        </div>
 
                         <?= img(['src' => $project->cover, 'class' => 'my-class'], true) ?>
 
