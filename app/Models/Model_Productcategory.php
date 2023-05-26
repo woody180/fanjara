@@ -35,7 +35,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
     
     public function pagingList()
     {
-        $totalPages = R::count('productcategory');
+        $totalPages = R::count('productcategory', 'lang = ?', [$_SESSION['lang']]);
         $currentPage = $_GET["page"] ?? 1;
         if ($currentPage < 1 OR $currentPage > $totalPages) $currentPage = 1;
         $limit = 12;
