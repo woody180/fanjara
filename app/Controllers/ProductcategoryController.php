@@ -2,6 +2,7 @@
 
 use \R as R;
 use  App\Engine\Libraries\Validation;
+use Cocur\Slugify\Slugify;
 
 class ProductcategoryController {
 
@@ -35,7 +36,7 @@ class ProductcategoryController {
                 ->rules([
                     'title|Title' => 'required|string|min[3]|max[150]',
                     'description|Description' => 'string|max[350]',
-                    'thumbnail|Thumbnail' => 'required|string|min[2]|max[350]',
+                    'banner|Banner' => 'required|string|min[2]|max[350]',
                     'lang|Language' => 'required|min[1]|max[5]|valid_input'
                 ])
                 ->validate();
@@ -51,11 +52,11 @@ class ProductcategoryController {
         // Save
         if (initModel('Productcategory')->save($body)) {
             setFlashData('success', 'Product category added successfully.');
-            return $res->baseUrl("productcategory/list");
+            return $res->redirect(baseUrl("productcategory/list"));
         }
         
         setFlashData('danger', 'Something went wrong!..');
-        return $res->redirectBack();
+        return $res->redirect(baseUrl("productcategory/list"));
     }
 
 
@@ -83,20 +84,56 @@ class ProductcategoryController {
 
     // Edit view
     public function edit($req, $res) {
-        $id = $req->getSegment(2);
+        
+        return $res->render('admin/product_categories/edit', [
+            'category' => initModel('productcategory')->getProductCategory($req->getSegment(2))
+        ]);
     }
 
 
     // Update
-    public function update($req, $res) {
-        $id = $req->getSegment(2);
+    public function update($req, $res)
+    {    
+        $validation = new Validation();
+        
+        // Get request data
+        $body = $req->body();
+
+        // Valdiate request data
+        $errors = $validation
+                ->with($body)
+                ->rules([
+                    'title|Title' => 'required|string|min[3]|max[150]',
+                    'description|Description' => 'string|max[350]',
+                    'banner|Banner' => 'required|string|min[2]|max[350]',
+                    'lang|Language' => 'required|min[1]|max[5]|valid_input'
+                ])
+                ->validate();
+    
+        
+        if (!empty($errors)) {
+            setForm($body);
+            setFlashData('error', $errors);
+            return $res->redirectBack();
+        }
+        
+        
+        $pc = initModel('productcategory')->getProductCategory($req->getSegment(2));
+        $slugify = new Slugify();
+        $body['url'] = $slugify->slugify($body['title']);
+        $pc->import($body);
+        R::store($pc);
+        
+        return $res->redirect(baseUrl("productcategory/list"));
     }
 
 
     // Delete
     public function delete($req, $res) {
-        $id = $req->getSegment(2);
+        initModel('productcategory');
+        R::trash('productcategory', $req->getSegment(2));
+        
+        return $res->redirectBack();
     }
 
 }
-        

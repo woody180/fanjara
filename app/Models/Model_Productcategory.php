@@ -93,6 +93,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
         $pc = R::dispense('productcategory');
         $slugify = new Slugify();
         $body['url'] = $slugify->slugify($body['title']);
+        $body['parentid'] = 0;
         $pc->import($body);
         
         return R::store($pc);
