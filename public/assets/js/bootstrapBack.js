@@ -14,5 +14,7 @@ if (document.body.classList.contains('init-tinyeditor')) {
 
 import ProductController from './Controllers/ProductController.js';
 import ProjectController from './Controllers/ProjectController.js';
+import ProjectController from './Controllers/ProductCategoryController.js';
 new ProductController({baseurl});
 new ProjectController({baseurl});
+new ProductCategoryController({baseurl});
