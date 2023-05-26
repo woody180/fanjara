@@ -3,6 +3,15 @@
 use \R as R;
 
 class ProductcategoryController {
+
+    
+    public function list($req, $res)
+    {   
+        return $res->render('admin/product_categories/list', [
+            'categories' => initModel('productcategory')->pagingList()
+        ]);
+    }
+
     
     // Add new view
     public function new($req, $res) {
