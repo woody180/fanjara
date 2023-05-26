@@ -36,5 +36,6 @@ return [
     'add_project' => 'Add project',
     'edit_project' => 'Edit project',
     'product_categories' => 'Product categories',
-    'add_product_category' => 'Add product category'
+    'add_product_category' => 'Add product category',
+    'edit_product_category' => 'Edit product category'
 ];

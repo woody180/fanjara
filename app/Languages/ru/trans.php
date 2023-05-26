@@ -36,5 +36,6 @@ return [
     'add_project' => 'Добавить проект',
     'edit_project' => 'Изменить проект',
     'product_categories' => 'Категории продукта',
-    'add_product_category' => 'Добавить категорию продукта'
+    'add_product_category' => 'Добавить категорию продукта',
+    'edit_product_category' => 'Изменить категорию продукта'
 ];
