@@ -14,6 +14,7 @@
                 <div>
                     <div class="fg-project-dir uk-card uk-card-hover uk-background-default uk-border-rounded uk-card-body uk-position-relative">
                         
+                        <?php if (checkAuth([1])): ?>
                         <div class="admin-buttons">
                             <a href="<?= baseUrl("projects/{$project->id}/edit") ?>" uk-icon="icon: pencil;" uk-tooltip="pos: right; title: Edit;" class="uk-icon-button"></a>
                             
@@ -22,6 +23,7 @@
                                 <button onclick="return confirm('Are you sure?')" type="submit"></button>
                             </form>
                         </div>
+                        <?php endif; ?>
 
                         <?= img(['src' => $project->cover, 'class' => 'my-class'], true) ?>
 
@@ -30,7 +32,9 @@
 
                             <a href="<?= baseUrl("projects/{$project->url}") ?>" class="project-dir uk-position-absolute uk-position-top-left uk-width-1-1" data-style="height: 100%;"></a>
 
-                            <h3 class="uk-card-title uk-margin-remove-top"><?= $project->title ?></h3>
+                            <h3 class="uk-card-title uk-margin-remove-top">
+                                <a href="<?= baseUrl("projects/{$project->url}") ?>" class="uk-link-reset heading-font"><?= $project->title ?></a>
+                            </h3>
                             <p></p>
                         </div>
                     </div>
