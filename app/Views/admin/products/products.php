@@ -33,6 +33,14 @@
             <?php endforeach; ?>
         </ul>
         
+        
+        
+        <?php if ($products->pager): ?>
+        <div class="uk-flex uk-flex-center uk-margin-large-top">
+            <?= $products->pager ?>
+        </div>
+        <?php endif; ?>
+        
     </div>
 </section>
 
