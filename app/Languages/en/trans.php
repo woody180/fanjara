@@ -37,5 +37,7 @@ return [
     'edit_project' => 'Edit project',
     'product_categories' => 'Product categories',
     'add_product_category' => 'Add product category',
-    'edit_product_category' => 'Edit product category'
+    'edit_product_category' => 'Edit product category',
+    'add_slide' => 'Add slide',
+    'edit_slides' => 'Edit slides',
 ];

@@ -37,5 +37,7 @@ return [
     'edit_project' => 'Изменить проект',
     'product_categories' => 'Категории продукта',
     'add_product_category' => 'Добавить категорию продукта',
-    'edit_product_category' => 'Изменить категорию продукта'
+    'edit_product_category' => 'Изменить категорию продукта',
+    'add_slide' => 'Добавить слайд',
+    'edit_slides' => 'Редактировать слайды',
 ];

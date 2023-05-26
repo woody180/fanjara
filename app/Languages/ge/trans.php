@@ -37,5 +37,7 @@ return [
     'edit_project' => 'პროექტის რედაქტირება',
     'product_categories' => 'პროდუქციის კატეგორიები',
     'add_product_category' => 'პროდუქტის კატეგორიის დამატება',
-    'edit_product_category' => 'პროდუქტის კატეგორიის რედაქტირება'
+    'edit_product_category' => 'პროდუქტის კატეგორიის რედაქტირება',
+    'add_slide' => 'სლაიდის დამატება',
+    'edit_slides' => 'სლაიდის რედაქტირება',
 ];
