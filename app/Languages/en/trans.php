@@ -34,5 +34,6 @@ return [
     'edit' => 'Edit',
     'projects_not_found' => 'Project not found',
     'add_project' => 'Add project',
-    'edit_project' => 'Edit project'
+    'edit_project' => 'Edit project',
+    'product_categories' => 'Product categories'
 ];

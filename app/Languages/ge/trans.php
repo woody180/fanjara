@@ -34,5 +34,6 @@ return [
     'edit' => 'რედაქტირება',
     'projects_not_found' => 'პროექტი ვერ მოიძებნა',
     'add_project' => 'პროექტის დამატება',
-    'edit_project' => 'პროექტის რედაქტირება'
+    'edit_project' => 'პროექტის რედაქტირება',
+    'product_categories' => 'პროდუქციის კატეგორიები'
 ];
