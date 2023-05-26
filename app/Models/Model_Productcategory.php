@@ -29,6 +29,13 @@ class Model_Productcategory extends RedBean_SimpleModel {
     }
     
     
+    public function getProductCategory($id)
+    {
+        if (is_numeric($id)) return R::findOne ('productcategory', 'id = ? and lang = ?', [$id, $_SESSION['lang']]) ?? abort();
+        return R::findOne ('productcategory', 'url = ? and lang = ?', [$id, $_SESSION['lang']]) ?? abort();
+    }
+    
+    
     public function list()
     {
         return R::find('productcategory', 'parentid = 0 and lang = ? order by id desc', [$_SESSION['lang']]);
