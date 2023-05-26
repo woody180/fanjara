@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use \R as R;
+use  App\Engine\Libraries\Validation;
 
 class ProductcategoryController {
 
@@ -14,14 +15,47 @@ class ProductcategoryController {
 
     
     // Add new view
-    public function new($req, $res) {
-        
+    public function new($req, $res)
+    {
+        return $res->render('admin/product_categories/new');
     }
 
 
     // Create view
-    public function create($req, $res) {
-       
+    public function create($req, $res)
+    {
+        $validation = new Validation();
+        
+        // Get request data
+        $body = $req->body();
+
+        // Valdiate request data
+        $errors = $validation
+                ->with($body)
+                ->rules([
+                    'title|Title' => 'required|string|min[3]|max[150]',
+                    'description|Description' => 'string|max[350]',
+                    'thumbnail|Thumbnail' => 'required|string|min[2]|max[350]',
+                    'lang|Language' => 'required|min[1]|max[5]|valid_input'
+                ])
+                ->validate();
+    
+        
+        if (!empty($errors)) {
+            setForm($body);
+            setFlashData('error', $errors);
+            return $res->redirectBack();
+        }
+        
+        
+        // Save
+        if (initModel('Productcategory')->save($body)) {
+            setFlashData('success', 'Product category added successfully.');
+            return $res->baseUrl("productcategory/list");
+        }
+        
+        setFlashData('danger', 'Something went wrong!..');
+        return $res->redirectBack();
     }
 
 

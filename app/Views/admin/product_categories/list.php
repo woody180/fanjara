@@ -6,10 +6,32 @@
     <div class="uk-container min-height">
         
         
+        <?php if (hasFlashData('success')): ?>
+        <div class="uk-alert-success" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><?= getFlashData('success') ?></p>
+        </div>
+        <?php endif; ?>
+        
+        
+        <?php if (hasFlashData('message')): ?>
+        <div class="uk-alert-primary" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><?= getFlashData('message') ?></p>
+        </div>
+        <?php endif; ?>
+        
+        <?php if (hasFlashData('error')): ?>
+        <div class="uk-alert-danger" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p><?= getFlashData('error') ?></p>
+        </div>
+        <?php endif; ?>
+        
         <div class="uk-flex uk-flex-between uk-flex-middle">
             <h3 class="uk-margin-remove"><?= App\Engine\Libraries\Languages::translate('trans.product_categories') ?></h3>
             
-            <a href="<?= baseUrl("page/new") ?>" class="uk-button uk-button-icon uk-button-icon-right uk-button-secondary">
+            <a href="<?= baseUrl("productcategory/new") ?>" class="uk-button uk-button-icon uk-button-icon-right uk-button-secondary">
                 <span uk-icon="icon: plus"></span>
                 <span><?= App\Engine\Libraries\Languages::translate('trans.create') ?></span>
             </a>
@@ -26,7 +48,7 @@
                         
                         <span class="uk-icon-button uk-margin-small-right uk-text-xsmall uk-text-uppercase"><?= $category->lang ?></span>
                         
-                        <a target="_blank" class="uk-icon-button uk-margin-small-right" href="<?= baseUrl("productcategory/{$category->url}") ?>" uk-icon="icon: pencil;"></a>
+                        <a class="uk-icon-button uk-margin-small-right" href="<?= baseUrl("productcategory/{$category->url}") ?>/edit" uk-icon="icon: pencil;"></a>
                         
                         <form action="<?= baseUrl("productcategory/{$category->id}") ?>" method="POST" onclick="return confirm('Are you sure?')">
                             <?= setMethod('delete') ?>

@@ -35,5 +35,6 @@ return [
     'projects_not_found' => 'Проекты не найдены',
     'add_project' => 'Добавить проект',
     'edit_project' => 'Изменить проект',
-    'product_categories' => 'Категории продукта'
+    'product_categories' => 'Категории продукта',
+    'add_product_category' => 'Добавить категорию продукта'
 ];

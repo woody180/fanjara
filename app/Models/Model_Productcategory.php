@@ -1,4 +1,6 @@
 <?php
+
+use Cocur\Slugify\Slugify;
         
 class Model_Productcategory extends RedBean_SimpleModel {
 
@@ -76,5 +78,16 @@ class Model_Productcategory extends RedBean_SimpleModel {
         $obj->data = $product;
         
         return $obj;
+    }
+    
+    
+    
+    public function save($body) {
+        $pc = R::dispense('productcategory');
+        $slugify = new Slugify();
+        $body['url'] = $slugify->slugify($body['title']);
+        $pc->import($body);
+        
+        return R::store($pc);
     }
 }
