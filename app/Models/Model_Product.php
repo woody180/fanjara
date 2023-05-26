@@ -53,7 +53,7 @@ class Model_Product extends RedBean_SimpleModel {
         $data = R::find("product", "order by id DESC limit $limit offset $offset");
         
         $obj = new stdClass();
-        $obj->pager = $pagingData;
+        $obj->pager = $totalPages > $limit ? $pagingData : null;
         $obj->data = $data;
         
         return $obj;
