@@ -83,7 +83,7 @@
                     
                     <a href="#" uk-icon="icon: trash" class="prouct-category-preview-remove uk-icon-button uk-position-top-right uk-margin-small-right uk-margin-small-top"></a>
                     
-                    <?= img(['src' => getForm('banner') ?? 'some.png', 'class' => 'uk-object-cover uk-width-1-1']) ?>
+                    <?= img(['src' => getForm('banner') ?? 'some.png', 'class' => 'uk-object-cover uk-width-1-1'], true) ?>
                 </div>
             </div>
             
