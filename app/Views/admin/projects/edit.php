@@ -37,6 +37,17 @@
             </div>
             
             
+            <div>
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.set_language') ?></label>
+                <select name="lang" id="" class="uk-select uk-border-rounded">
+                    <?php foreach (App\Engine\Libraries\Languages::list() as $lang): ?>
+                    <option <?= $lang->code == $project->lang ? 'selected' : '' ?> value="<?= $lang->code ?>"><?= $lang->language ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <?= show_error('errors', 'lang') ?>
+            </div>
+            
+            
             <div class="uk-width-1-2">
                 <div id="fg-filemanager-cover" class="js-upload uk-placeholder uk-text-center uk-margin-remove uk-cursor-pointer uk-border-rounded">
                     <input id="cover-hidden-input" type="hidden" value="<?= $project->cover ?>" name="cover">

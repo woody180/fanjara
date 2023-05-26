@@ -46,7 +46,7 @@
             
             
             <div>
-                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.title') ?></label>
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.set_language') ?></label>
                 <select name="lang" id="" class="uk-select uk-border-rounded">
                     <?php foreach (App\Engine\Libraries\Languages::list() as $lang): ?>
                     <option value="<?= $lang->code ?>"><?= $lang->language ?></option>
