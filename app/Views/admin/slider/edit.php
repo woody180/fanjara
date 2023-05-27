@@ -15,7 +15,7 @@
     <div class="uk-container min-height">
         
         <div class="uk-margin-large-bottom">
-            <h3><?= App\Engine\Libraries\Languages::translate('trans.edit_slide') ?></h3>
+            <h3><?= App\Engine\Libraries\Languages::translate('trans.edit_slides') ?></h3>
             <hr class="uk-divider-small">
         </div>
         

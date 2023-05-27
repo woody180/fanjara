@@ -29,9 +29,9 @@
         <?php endif; ?>
         
         <div class="uk-flex uk-flex-between uk-flex-middle">
-            <h3 class="uk-margin-remove"><?= App\Engine\Libraries\Languages::translate('trans.product_categories') ?></h3>
+            <h3 class="uk-margin-remove"><?= App\Engine\Libraries\Languages::translate('trans.slides') ?></h3>
             
-            <a href="<?= baseUrl("productcategory/new") ?>" class="uk-button uk-button-icon uk-button-icon-right uk-button-secondary">
+            <a href="<?= baseUrl("slider/new") ?>" class="uk-button uk-button-icon uk-button-icon-right uk-button-secondary">
                 <span uk-icon="icon: plus"></span>
                 <span><?= App\Engine\Libraries\Languages::translate('trans.create') ?></span>
             </a>
