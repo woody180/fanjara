@@ -29,7 +29,7 @@ class Model_Slider extends RedBean_SimpleModel {
     
     public function list()
     {
-        return R::find('slider', 'order by id desc');
+        return R::find('slider', 'lang = ? order by id desc', [$_SESSION['lang']]);
     }
     
     
