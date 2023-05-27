@@ -206,7 +206,7 @@ class ProductController {
         $product->sharedProductcategoryList[] = R::findOne('productcategory', 'id = ?', [$req->body('productcategory')]);
         R::store($product);
         
-        if ($_SESSION['lang'] != $product->lang) $_SESSION['lang'] = $product->lang;
+        if ($_SESSION['lang'] != $body['lang']) $_SESSION['lang'] = $body['lang'];
         
         setFlashData('success', \App\Engine\Libraries\Languages::translate([
             'ge' => 'პროდუქტი წარმატებით განახლდას.',
