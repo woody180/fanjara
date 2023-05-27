@@ -119,15 +119,14 @@ class ProductcategoryController {
             return $res->redirect(baseUrl("productcategory/{$pc->id}/edit"));
         }
         
-        
-        if ($_SESSION['lang'] != $pc->lang) $_SESSION['lang'] = $pc->lang;
-        
         $slugify = new Slugify();
         $body['url'] = $slugify->slugify($body['title']);
         $pc->import($body);
         R::store($pc);
         
-        return $res->redirect(baseUrl("productcategory/list"));
+        if ($_SESSION['lang'] != $body['lang']) $_SESSION['lang'] = $body['lang'];
+        
+        return $res->redirect(baseUrl("productcategory/{$pc->id}/edit"));
     }
 
 
