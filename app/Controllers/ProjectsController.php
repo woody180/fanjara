@@ -35,16 +35,16 @@ class ProjectsController {
         if (!empty($errors)) {
             setFlashData('errors', $errors);
             setForm($body);
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("projects/new"));
         }
         
         if (initModel('projects')->save($body)) {
             setFlashData('success', 'Project with gallery added successfully.');
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("projects/new"));
         }
         
         setFlashData('error', 'Something whent wrong while saving data');
-        return $res->redirectBack();
+        return $res->redirect(baseUrl("projects/new"));
     }
 
 
@@ -80,8 +80,10 @@ class ProjectsController {
         $project = initModel('projects')->getProjet($req->getSegment(2));
         $project->import($body);
         R::store($project);
+        
+        if ($project->lang != $_SESSION['lang']) $_SESSION['lang'] = $project->lang;
 
-        return $res->redirectBack();
+        return $res->redirect(baseUrl("projects/{$project->id}/edit"));
     }
 
 
