@@ -104,7 +104,7 @@ class SliderController {
         $slide->import($body);
         R::store($slide);
         
-        if ($_SESSION['lang'] != $slide->lang) $_SESSION['lang'] = $slide->lang;
+        if ($_SESSION['lang'] != $body['lang']) $_SESSION['lang'] = $body['lang'];
         
         return $res->redirect(baseUrl("slider/{$req->getSegment(2)}/edit"));
     }
