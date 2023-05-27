@@ -29,7 +29,7 @@ class PageController {
         if (!empty($errors)) {
             setFlashData('error', $errors);
             setForm($req->body());
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("page/new"));
         }
         
         if (initModel('page')->save($req->body()))
@@ -39,11 +39,14 @@ class PageController {
                 'ru' => 'Страница успешно создана',
                 'en' => 'Page created successfully',
             ]) );
-            
-            return $res->redirectBack();
         } else {
-            
+             setFlashData('message', \App\Engine\Libraries\Languages::translate([
+                'ge' => 'დაფიქსირდა შეცდომა',
+                'ru' => 'Возникла ошибка',
+                'en' => 'Error occurred',
+            ]) );
         }
+        return $res->redirect(baseUrl("page/new"));
     }
 
 
