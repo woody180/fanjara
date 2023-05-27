@@ -23,7 +23,7 @@ class SliderController {
         $errors = $validation
                 ->with($body)
                 ->rules([
-                    'title|Title' => 'required|min[3]|string|max[200]',
+                    'title|Title' => 'string|max[200]',
                     'url|url' => 'valid_url',
                     'description|Description' => 'min[3]|string|max[300]',
                     'slide|Slide' => 'required|min[3]|string|max[300]',
@@ -84,7 +84,7 @@ class SliderController {
         $errors = $validation
                 ->with($body)
                 ->rules([
-                    'title|Title' => 'required|min[3]|string|max[200]',
+                    'title|Title' => 'min[3]|string|max[200]',
                     'url|url' => 'valid_url',
                     'description|Description' => 'min[3]|string|max[300]',
                     'slide|Slide' => 'required|min[3]|string|max[300]',
