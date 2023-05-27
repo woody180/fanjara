@@ -76,12 +76,11 @@ class ProjectsController {
     // Update
     public function update($req, $res) {
         $body = $req->body();
-        $body['lang'] = $_SESSION['lang'];
         $project = initModel('projects')->getProjet($req->getSegment(2));
         $project->import($body);
         R::store($project);
         
-        if ($project->lang != $_SESSION['lang']) $_SESSION['lang'] = $project->lang;
+        if ($body['lang'] != $_SESSION['lang']) $_SESSION['lang'] = $body['lang'];
 
         return $res->redirect(baseUrl("projects/{$project->id}/edit"));
     }
