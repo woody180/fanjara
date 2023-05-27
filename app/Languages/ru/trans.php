@@ -40,4 +40,5 @@ return [
     'edit_product_category' => 'Изменить категорию продукта',
     'add_slide' => 'Добавить слайд',
     'edit_slides' => 'Редактировать слайды',
+    'slides' => 'Слайды',
 ];

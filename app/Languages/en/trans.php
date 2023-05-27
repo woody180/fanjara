@@ -40,4 +40,5 @@ return [
     'edit_product_category' => 'Edit product category',
     'add_slide' => 'Add slide',
     'edit_slides' => 'Edit slides',
+    'slides' => 'Slides',
 ];
