@@ -2,30 +2,30 @@
 
 <?php $this->start('mainSection') ?>
 
+<?php if (initModel('slider')->list()): ?>
 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 400; max-height: 700; autoplay: true; autoplay-interval: 5000; pause-on-hover: false;">
 
     <ul class="uk-slideshow-items">
+        <?php foreach (initModel('slider')->list() as $slide): ?>
         <li>
-            <img src="https://www.okna.ru/local/templates/kaleva/images/banner/kaleva-motion.webp" alt="" uk-cover>
-            <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
-                <h3 class="uk-margin-remove">Overlay Bottom Right</h3>
-                <p class="uk-margin-remove">Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <img src="https://www.okna.ru/local/templates/kaleva/images/banner/banner-5.webp" alt="" uk-cover>
+            <?php if ($slide->url): ?>
+            <a target="_blank" href="<?= $slide->url ?>" class="uk-position-absolute" data-style="z-index: 2; left: 0; top: 0; width: 100%; height: 100%"></a>
+            <?php endif; ?>
             
-            <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
-                <h3 class="uk-margin-remove">Overlay Bottom Right</h3>
-                <p class="uk-margin-remove">Lorem ipsum dolor sit amet.</p>
+            <img src="<?= assetsUrl("tinyeditor/filemanager/files/{$slide->slide}") ?>" alt="" uk-cover>
+            <div <?= (strlen($slide->description) < 1 && strlen($slide->title) < 1 ) ? 'hidden' : ''  ?> class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center">
+                <h3 <?= (strlen($slide->title) < 1) ? 'hidden' : ''  ?> class="uk-margin-remove"><?= $slide->title ?></h3>
+                <p <?= (strlen($slide->description) < 1) ? 'hidden' : ''  ?> class="uk-margin-remove"><?= $slide->description ?></p>
             </div>
         </li>
+        <?php endforeach; ?>
     </ul>
 
     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 
 </div>
+<?php endif; ?>
 
 
 <section class="uk-section">
