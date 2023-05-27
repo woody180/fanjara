@@ -45,7 +45,7 @@ class ProductController {
         if (!empty($errors)) {
             setFlashData('error', $errors);
             setForm($body);
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("product/new"));
         }
         
         
@@ -82,7 +82,10 @@ class ProductController {
         $body['createdat'] = time();
         $body['updatedat'] = time();
         
-        R::store($product);
+        $pID = R::store($product);
+        
+        $product = R::load('product', $pID);
+        if ($product->lang != $_SESSION['lang']) $_SESSION['lang'] = $product->lang;
         /////////////////////////////////////////////////////////
         
         
@@ -92,7 +95,7 @@ class ProductController {
             'ru' => 'Продукт был успешно сохранен.'
         ]);
         setFlashData('success', $message);
-        return $res->redirectBack();
+        return $res->redirect(baseUrl('productlist'));
     }
 
 
@@ -162,11 +165,13 @@ class ProductController {
         
         unset($body['productcategory']);
         
+        $product = R::findOne('product', 'id = ?', [$id]);
+        
         // If errors
         if (!empty($errors)) {
             setFlashData('error', $errors);
             setForm($body);
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("product/{$product->id}/edit"));
         }
         
         
@@ -196,11 +201,12 @@ class ProductController {
         }
         
         // Get product
-        $product = R::findOne('product', 'id = ?', [$id]);
         $product->import($body);
         $product->sharedProductcategory = [];
         $product->sharedProductcategoryList[] = R::findOne('productcategory', 'id = ?', [$req->body('productcategory')]);
         R::store($product);
+        
+        if ($_SESSION['lang'] != $product->lang) $_SESSION['lang'] = $product->lang;
         
         setFlashData('success', \App\Engine\Libraries\Languages::translate([
             'ge' => 'პროდუქტი წარმატებით განახლდას.',
@@ -208,7 +214,7 @@ class ProductController {
             'ru' => 'Продукт успешно обновлен.'
         ]));
         
-        return $res->redirectBack();
+        return $res->redirect(baseUrl("product/{$product->id}/edit"));
     }
 
 
@@ -220,7 +226,7 @@ class ProductController {
         
         R::trash('product', $id);
         
-        return $res->redirectBack();
+        return $res->redirect(baseUrl("productlist"));
     }
 
 }
