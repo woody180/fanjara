@@ -45,7 +45,7 @@ class ProductcategoryController {
         if (!empty($errors)) {
             setForm($body);
             setFlashData('error', $errors);
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("productcategory/new"));
         }
         
         
@@ -111,14 +111,17 @@ class ProductcategoryController {
                 ->validate();
     
         
+        $pc = initModel('productcategory')->getProductCategory($req->getSegment(2));
+        
         if (!empty($errors)) {
             setForm($body);
             setFlashData('error', $errors);
-            return $res->redirectBack();
+            return $res->redirect(baseUrl("productcategory/{$pc->id}/edit"));
         }
         
         
-        $pc = initModel('productcategory')->getProductCategory($req->getSegment(2));
+        if ($_SESSION['lang'] != $pc->lang) $_SESSION['lang'] = $pc->lang;
+        
         $slugify = new Slugify();
         $body['url'] = $slugify->slugify($body['title']);
         $pc->import($body);
