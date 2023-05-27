@@ -62,7 +62,7 @@
             
             <?php foreach (initModel('Productcategory')->list() as $category): ?>
             <div>
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$category->banner}") ?>" bg-size="contain" bg-position="bottom right">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$category->banner}") ?>" bg-size="cover" bg-position="bottom right">
                     <a href="<?= baseUrl("productcategory/{$category->url}") ?>" class="layer-film"></a>
                     
                     <a href="<?= baseUrl("productcategory/{$category->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
