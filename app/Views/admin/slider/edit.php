@@ -53,7 +53,7 @@
             
             <div>
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.description') ?></label>
-                <textarea name="description" class="uk-textarea uk-border-rounded"><?= getForm('description') ?></textarea>
+                <textarea name="description" class="uk-textarea uk-border-rounded"><?= $slide->description ?></textarea>
                 <?= show_error('error', 'description') ?>
             </div>
             
