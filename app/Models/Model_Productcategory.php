@@ -38,7 +38,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
     
     public function list()
     {
-        return R::find('productcategory', 'parentid = 0 and lang = ? order by id desc', [$_SESSION['lang']]);
+        return R::find('productcategory', 'parentid = 0 and lang = ? order by id asc', [$_SESSION['lang']]);
     }
     
     
