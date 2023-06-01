@@ -58,15 +58,15 @@
             </div>
         </div>
 
-        <div class="fj-category-grid">
+        <!--<div class="fj-category-grid">-->
+        <div class="uk-grid-match uk-grid-medium" uk-grid>
             
-            <?php foreach (initModel('Productcategory')->list() as $category): ?>
-            <div>
-                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$category->banner}") ?>" bg-size="cover" bg-position="bottom right">
-                    <a href="<?= baseUrl("productcategory/{$category->url}") ?>" class="layer-film"></a>
+            <div class="uk-width-1-2@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[0]->banner}") ?>" bg-size="cover" bg-position="bottom right">
+                    <a href="<?= baseUrl("productcategory/{$categories[0]->url}") ?>" class="layer-film"></a>
                     
-                    <a href="<?= baseUrl("productcategory/{$category->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
-                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $category->title ?></h3>
+                    <a href="<?= baseUrl("productcategory/{$categories[0]->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $categories[0]->title ?></h3>
                         
                         <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
                             <span uk-icon="icon: arrow-right"></span>
@@ -75,7 +75,74 @@
                     </a>
                 </div>
             </div>
-            <?php endforeach; ?>
+            
+            <div class="uk-width-1-2@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[4]->banner}") ?>" bg-size="cover" bg-position="bottom right">
+                    <a href="<?= baseUrl("productcategory/{$categories[4]->url}") ?>" class="layer-film"></a>
+                    
+                    <a href="<?= baseUrl("productcategory/{$categories[4]->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $categories[4]->title ?></h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 12px;]"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="uk-width-1-3@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[3]->banner}") ?>" bg-size="cover" bg-position="bottom right">
+                    <a href="<?= baseUrl("productcategory/{$categories[3]->url}") ?>" class="layer-film"></a>
+                    
+                    <a href="<?= baseUrl("productcategory/{$categories[3]->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $categories[3]->title ?></h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 12px;]"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="uk-width-1-3@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[2]->banner}") ?>" bg-size="cover" bg-position="bottom right">
+                    <a href="<?= baseUrl("productcategory/{$categories[2]->url}") ?>" class="layer-film"></a>
+                    
+                    <a href="<?= baseUrl("productcategory/{$categories[2]->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $categories[2]->title ?></h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 12px;]"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="uk-width-1-3@s">
+                <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[1]->banner}") ?>" bg-size="cover" bg-position="bottom right">
+                    <a href="<?= baseUrl("productcategory/{$categories[1]->url}") ?>" class="layer-film"></a>
+                    
+                    <a href="<?= baseUrl("productcategory/{$categories[1]->url}") ?>" class="uk-position-relative uk-position-z-index uk-link-reset uk-flex uk-height-1-1" data-style="flex-flow: wrap; align-content: space-between;">
+                        <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 18px;]" class="uk-width-1-1"><?= $categories[1]->title ?></h3>
+                        
+                        <button class="uk-button uk-button-default uk-button-icon uk-button-icon-right">
+                            <span uk-icon="icon: arrow-right"></span>
+                            <span data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 12px;]"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+
+
+            
             
         </div>
     
