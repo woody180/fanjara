@@ -95,7 +95,7 @@
             
             
             
-            <div class="uk-width-1-3@s">
+            <div class="uk-width-1-3@m uk-width-1-2@s">
                 <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[3]->banner}") ?>" bg-size="cover" bg-position="bottom right">
                     <a href="<?= baseUrl("productcategory/{$categories[3]->url}") ?>" class="layer-film"></a>
                     
@@ -110,7 +110,7 @@
                 </div>
             </div>
             
-            <div class="uk-width-1-3@s">
+            <div class="uk-width-1-3@m uk-width-1-2@s">
                 <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[2]->banner}") ?>" bg-size="cover" bg-position="bottom right">
                     <a href="<?= baseUrl("productcategory/{$categories[2]->url}") ?>" class="layer-film"></a>
                     
@@ -125,7 +125,7 @@
                 </div>
             </div>
             
-            <div class="uk-width-1-3@s">
+            <div class="uk-width-1-3@m uk-width-1-2@s">
                 <div class="uk-card uk-card-body uk-height-medium uk-position-responsive uk-border-rounde uk-overflow-hidden uk-light uk-overflow-hidden uk-border-rounded" data-bg-color="#F2F2F2" data-bg="<?= assetsUrl("tinyeditor/filemanager/files/{$categories[1]->banner}") ?>" bg-size="cover" bg-position="bottom right">
                     <a href="<?= baseUrl("productcategory/{$categories[1]->url}") ?>" class="layer-film"></a>
                     
