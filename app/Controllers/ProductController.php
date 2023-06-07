@@ -32,9 +32,9 @@ class ProductController {
                 'thumbnail|Thumbnail' => 'required|ext[jpg,jpeg,png,webp]',
                 'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
-                'constructorurl|Calculation url' => 'valid_url|max[300]',
+                'constructorurl|Calculation url' => 'valid_url|max[500]',
                 'productcategory|Product category' => 'required|numeric|max[3]',
-                'lang|Lanugage' => 'min[2]|max[2]|alpha'
+                'lang|Lanugage' => 'min[2]|max[3]|alpha'
             ])
             ->validate();
         
@@ -157,9 +157,9 @@ class ProductController {
                 'thumbnail|Thumbnail' => 'required|ext[jpg,jpeg,png,webp]',
                 'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
-                'constructorurl|Calculation url' => 'valid_url|max[300]',
+                'constructorurl|Calculation url' => 'valid_url|max[500]',
                 'productcategory|Product category' => 'required|numeric|max[3]',
-                'lang|Lanugage' => 'min[2]|max[2]|alpha'
+                'lang|Lanugage' => 'min[2]|max[3]|alpha'
             ])
             ->validate();
         
