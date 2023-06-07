@@ -39,6 +39,7 @@
             <div class="uk-width-1-2@m">
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.url') ?></label>
                 <input type="text" name="url" class="uk-input uk-border-rounded" value="<?= getForm('url') ?>">
+                <?= show_error('error', 'url') ?>
             </div>
             
             <div>
