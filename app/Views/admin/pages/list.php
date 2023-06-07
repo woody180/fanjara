@@ -37,6 +37,13 @@
             </li>
             <?php endforeach; ?>
         </ul>
+        
+        
+        <?php if ($data->pager): ?>
+        <div class="uk-flex uk-flex-center uk-margin-large-top">
+            <?= $data->pager ?>
+        </div>
+        <?php endif; ?>
 
 
     </div>
