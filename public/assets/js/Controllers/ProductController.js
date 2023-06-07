@@ -43,10 +43,29 @@ export default class ProductController extends SketchEngine {
         UIkit.util.on(this.selectors.sortableGalleryContainer, 'stop', this.functions.gallerySort.bind(this));
         this.lib(this.selectors.filemanagerBtn).on('click', this.functions.openFilemanager.bind(this));
         this.lib('body').on('click', this.functions.imageTrash.bind(this), this.selectors.imageTrashBtn);
+        this.lib('select[name="lang"]').on('change', this.functions.switchLanguage.bind(this));
     }
 
 
     functions = {
+        
+        switchLanguage(e) {
+            const options = e.target.options;
+            const index = options.selectedIndex;
+            const val = options[index].value;
+            
+            fetch(`${this.variables.baseurl}/${document.documentElement.lang}/language/switch/${val}`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(res => res.json())
+            .then(res => {
+                return location.href = res.url;
+            });
+        },
         
         imageTrash(e) {
             e.preventDefault();
