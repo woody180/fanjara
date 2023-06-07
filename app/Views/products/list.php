@@ -18,20 +18,13 @@
                         <div class="uk-card-media-top uk-position-relative" data-responsive="max-width[<?= M_WIDTH ?>]; style[height: 170px;]">
                             <?= img(['src' => $product->thumbnail, 'class' => 'uk-object-cover uk-display-block uk-width-1-1'], true) ?>
                         
-                            <a class="uk-position-absolute uk-width-1-1 uk-height-1-1" data-style="top: 0; left: 0;" href="<?= baseUrl("product/{$product->url}") ?>"></a>
+                            <a target="_blank" class="uk-position-absolute uk-width-1-1 uk-height-1-1" data-style="top: 0; left: 0;" href="<?= $product->constructorurl ?>"></a>
                         </div>
                         
                         <div class="uk-card-body">
                             <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 16px]" class="uk-card-title uk-margin-remove">
-                                <a class="uk-link-reset" href="<?= baseUrl("product/{$product->url}") ?>"><?= $product->title ?></a>
+                                <a target="_blank" class="uk-link-reset" href="<?= $product->constructorurl ?>"><?= $product->title ?></a>
                             </h3>
-                            
-                            <?php if (strlen($product->constructorurl)): ?>
-                            <a class="uk-text-small uk-flex uk-flex-middle uk-margin-small-top" target="_blank" href="<?= $product->constructorurl ?>">
-                                <?= App\Engine\Libraries\Languages::translate('trans.configurator') ?>
-                                <span uk-icon="icon: arrow-right;"></span>
-                            </a>
-                            <?php endif; ?>
                             
                             <?php if (strlen($product->details)): ?>
                             <hr>
@@ -40,7 +33,7 @@
                         </div>
                         
                         <div class="uk-card-footer">
-                            <a href="<?= baseUrl("product/{$product->url}") ?>" class="uk-button uk-button-text"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></a>
+                            <a target="_blank" href="<?= $product->constructorurl ?>" class="uk-button uk-button-text"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></a>
                         </div>
                     </div>
                 </div>
