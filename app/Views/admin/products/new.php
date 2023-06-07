@@ -41,13 +41,7 @@
                 <input type="text" name="url" class="uk-input uk-border-rounded" value="<?= getForm('url') ?>">
             </div>
             
-            <div class="uk-width-1-3@m">
-                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.price') ?></label>
-                <input type="number" name="price" class="uk-input uk-border-rounded" value="<?= getForm('price') ?>">
-                <?= show_error('error', 'price') ?>
-            </div>
-            
-            <div class="uk-width-2-3@m">
+            <div>
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.priceconstructorurl') ?></label>
                 <input type="text" name="constructorurl" class="uk-input uk-border-rounded" value="<?= getForm('constructorurl') ?>">
                 <?= show_error('error', 'constructorurl') ?>
@@ -65,7 +59,7 @@
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.set_language') ?></label>
                 <select name="lang" id="" class="uk-select uk-border-rounded">
                     <?php foreach (\App\Engine\Libraries\Languages::list() as $lng): ?>
-                    <option value="<?= $lng->code ?>"><?= ucfirst($lng->language) ?></option>
+                    <option <?= $lng->code == $_SESSION['lang'] ? 'selected' : '' ?> value="<?= $lng->code ?>"><?= ucfirst($lng->language) ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -87,7 +81,7 @@
             </div>
             
             
-            <div class="uk-width-1-3@m">
+            <div class="uk-width-1-3@m uk-margin-auto">
                 <label for="thumb" class="uk-form-label uk-display-block uk-cursor-pointer" id="fj-upload-thumbnail">
 
                     <?= App\Engine\Libraries\Languages::translate('trans.thumbnail') ?>
@@ -106,9 +100,9 @@
             </div>
             
             
-            <div class="uk-width-2-3@m">
+<!--            <div class="uk-width-2-3@m">
                 
-                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.gallery') ?></label>
+                <label for="" class="uk-form-label"><?= ''//App\Engine\Libraries\Languages::translate('trans.gallery') ?></label>
                 <input id="fg-gallery-hidden" type="hidden" name="gallery" value="">
                 
                 <div id="fg-filemanager" class="js-upload uk-placeholder uk-text-center uk-margin-remove uk-cursor-pointer">
@@ -124,8 +118,8 @@
                 </ul>
 
                 
-                <?= show_error('error', 'gallery') ?>
-            </div>
+                <?= ''//show_error('error', 'gallery') ?>
+            </div>-->
             
             
             <div>

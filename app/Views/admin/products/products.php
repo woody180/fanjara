@@ -22,7 +22,7 @@
                     
                     <div class="uk-flex">
                         <span class="uk-icon-button uk-margin-small-right uk-text-xsmall uk-text-uppercase"><?= $product->lang ?></span>
-                        <a href="<?= baseUrl("product/{$product->id}/edit") ?>" uk-icon="icon: pencil;" class="uk-icon-button uk-margin-small-right"></a>
+                        <a href="<?= URLROOT . "/{$product->lang}/product/{$product->id}/edit" ?>" uk-icon="icon: pencil;" class="uk-icon-button uk-margin-small-right"></a>
                         <form method="post" action="<?= baseUrl("product/{$product->id}") ?>" onclick="return confirm('Are you sure?')">
                             <?= setMethod('delete') ?>
                             <button uk-icon="icon: trash;" class="uk-icon-button"></button>
