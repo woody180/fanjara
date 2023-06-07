@@ -18,69 +18,92 @@
                             <p>
                                 <?=
                                     App\Engine\Libraries\Languages::translate([
-                                        'ge' => 'წარმოებაში დანერგილი მაღალი სტანდარტის გამო, 2009 წლიდან დღემდე, <br>რეჰაუ ყოველწლიურად გვანიჭებს ოფიციალური პარტნიორის წოდებას.',
-                                        'ru' => 'Благодаря высокому стандарту, внедренному в производство, с 2009 года по настоящее время <br>Rehau ежегодно присуждает нам звание официального партнера.',
-                                        'en' => 'Due to the high standard introduced in production, since 2009 until now, <br>Rehau has awarded us the title of official partner every year.',
+                                        'ge' => 'შპს ავე ლუქსის საკონტაქტო მონაცემები',
+                                        'ru' => 'Контактные данные ООО «Аве Люкс»',
+                                        'en' => 'Contact details of Ave Lux Ltd',
                                     ]);
                                 ?>
                             </p>
-                        </div>
-
-                        <div>
-                             <span class="uk-label uk-margin-small-right in-margin-bottom@s">
-                                <span class="uk-margin-small-right uk-icon" uk-icon="icon: phone; ratio: .7"></span>
-                                <a class="uk-link-reset" href="tel:+995(32)2238060">+995 (32) 223 80 60</a>
-                            </span>
-
-                            <span class="uk-label in-margin-bottom@s">
-                                <span class="uk-margin-small-right uk-icon" uk-icon="icon: mail; ratio: .7"></span>
-                                <a class="uk-link-reset" href="mailto:info@fanjara.ge">info@fanjara.ge</a>
-                            </span>
+                            
+                            <hr class="uk-divider-small">
+                            
+                            <a href="tel:+995322238060" class="uk-display-block uk-margin-bottom uk-link-reset">
+                                <span uk-icon="icon: receiver"></span>
+                                <span class="uk-display-inline-block uk-margin-small-left">+995(32)223 80 60</span>
+                            </a>
+                            
+                            <a href="tel:+995322238060" class="uk-display-block uk-margin-bottom uk-link-reset">
+                                <span uk-icon="icon: mail"></span>
+                                <span class="uk-display-inline-block uk-margin-small-left">info@fanjara.ge</span>
+                            </a>
                         </div>
                         
                     </div>
                 </div>
                 
                 <div class="fj-footer-columns">
-                    <div>
-                        <div class="uk-list uk-list-divider uk-margin-remove">
-                            <?php foreach (initModel('Productcategory')->list() as $pcl): ?>
-                            <li>
-                                <a href="<?= baseUrl("productcategory/{$pcl->url}") ?>"><?= $pcl->title ?></a>
-                            </li>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
                     
                     <div>
                         <div class="uk-list uk-list-divider uk-margin-remove">
-                            <li>
-                                <a href="<?= baseUrl('page/about') ?>">
-                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'ჩვენ შესახებ', 'en' => 'About us', 'ru' => 'О нас']) ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= baseUrl('page/vacancies') ?>">
-                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'ვაკანსია', 'en' => 'Vacancy', 'ru' => 'Вакансия']) ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= baseUrl('page/vacancies') ?>">
-                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'პარტნიორები', 'en' => 'Partners', 'ru' => 'Партнеры']) ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= baseUrl('page/vacancies') ?>">
-                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'კონსულტაცია', 'en' => 'Consulting', 'ru' => 'Консалтинг']) ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= baseUrl('page/projects') ?>">
-                                    <?= App\Engine\Libraries\Languages::translate(['ge' => 'პროექტები', 'en' => 'Projects', 'ru' => 'Проекты']) ?>
-                                </a>
-                            </li>
+                            <h3><?= App\Engine\Libraries\Languages::translate(['ge' => 'სერვისი', 'en' => 'Service', 'ru' => 'Сервис']) ?></h3>
+                            
+                            <ul class="uk-list">
+                                <li>
+                                    <a href="<?= baseUrl('page/consultation') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'კონსულტაცია', 'en' => 'Consultation', 'ru' => 'Консультация']) ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl('page/window-configuration') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ფანჯრის კონფიგურაცია', 'en' => 'Window configuration', 'ru' => 'Kонфигурация окна']) ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl('page/tentis-konfiguratsia') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ტენტის კონფიგურაცია', 'en' => 'Tent configuration', 'ru' => 'Конфигурация палатки']) ?>
+                                    </a>
+                                </li>
+                            </ul>
+                            
                         </div>
                     </div>
+                    
+                    
+                    <div>
+                        <div class="uk-list uk-list-divider uk-margin-remove">
+                            <h3><?= App\Engine\Libraries\Languages::translate(['ge' => 'ინფორმაცია', 'en' => 'Information', 'ru' => 'Информация']) ?></h3>
+                            
+                            <ul class="uk-list">
+                                <li>
+                                    <a href="<?= baseUrl('page/fanjris-shesakheb') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ფანჯრის შესახებ', 'en' => 'About the window', 'ru' => 'Об окне']) ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl('page/saketebis-shesakheb') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'საკეტების შესახებ', 'en' => 'About locks', 'ru' => 'О замках']) ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl('page/sheminvis-shesakheb') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'შემინვის შესახებ', 'en' => 'About listening', 'ru' => 'О прослушивании']) ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl('page/tentebis-shesakheb') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ტენტების შესახებ', 'en' => 'About tents', 'ru' => 'О палатках']) ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl('page/frequently-asked-questions') ?>">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ხშირად დასმული კითხვები', 'en' => 'Frequently Asked Questions', 'ru' => 'Часто задаваемые вопросы']) ?>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    
                 </div>
                 
            
