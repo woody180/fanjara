@@ -11,7 +11,7 @@ return [
     'title' => 'Title',
     'url' => 'Url',
     'price' => 'Price',
-    'priceconstructorurl' => 'Price Constructor url',
+    'priceconstructorurl' => 'Redirect url',
     'content' => 'Content',
     'thumbnail' => 'Thumbnail',
     'gallery' => 'Gallery',

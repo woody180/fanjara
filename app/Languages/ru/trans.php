@@ -11,7 +11,7 @@ return [
     'title' => 'Заголовок',
     'url' => 'Url',
     'price' => 'Цена',
-    'priceconstructorurl' => 'URL-адрес конструктора цен',
+    'priceconstructorurl' => 'URL-адрес перенаправления',
     'content' => 'Содержание',
     'thumbnail' => 'показательная картина',
     'gallery' => 'Галерея',

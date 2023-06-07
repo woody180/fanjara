@@ -11,7 +11,7 @@ return [
     'title' => 'სათაური',
     'url' => 'მისამართი',
     'price' => 'ფასი',
-    'priceconstructorurl' => 'ფასის საანგარიშო კალკულაციის მისამართი',
+    'priceconstructorurl' => 'გადასასვლელი მისამართი',
     'content' => 'ტექსტი / კონტენტი',
     'thumbnail' => 'სურათი',
     'gallery' => 'გალერეა',
