@@ -14,5 +14,7 @@ $router->get('language/switch/(:alpha)', function($req, $res) {
     array_unshift($prevUrl, $languageCode);
     $newurl = join('/',$prevUrl);
     
+    if ($req->isAjax()) return $res->send(['url' => URLROOT . "/{$newurl}"]);
+    
     return $res->redirect(URLROOT . "/{$newurl}");
 });
