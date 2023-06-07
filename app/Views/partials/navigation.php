@@ -15,8 +15,7 @@
             <li><a href="#"> <span class="ln-parse">{{[en="Services"][ge="სერვისი"][ru="Сервисы"]}}</span> <span uk-navbar-parent-icon></span> </a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="<?= baseUrl("page/consulting") ?>" class="ln-parse">{{ [en="Consulting"][ge="კონსულტაცია"][ru="Консультация"] }}</a></li>
-                        <li><a href="<?= baseUrl("projects") ?>">{{ [en="Projects"][ge="პროექტები"][ru="проекты"] }}</a></li>
+                        <li><a href="<?= baseUrl("page/consulting") ?>" class="ln-parse">{{ [en="Consultations and projects"][ge="კონსულტაციები და პროექტები"][ru="консультация и проектирование"] }}</a></li>
                     </ul>
                 </div>
             </li>
@@ -26,6 +25,7 @@
                         <li><a href="<?= baseUrl("page/about") ?>">{{ [ge="ჩვენს შესახებ"][en="About us"][ru="О нас"] }}</a></li>
                         <li><a href="<?= baseUrl("page/vacancies") ?>">{{ [ge="ვაკანსია"][en="Vacancy"][ru="Вакансия"] }}</a></li>
                         <li><a href="<?= baseUrl("page/partners") ?>">{{ [ge="პარტნიორები"][en="Partners"][ru="Партнеры"] }}</a></li>
+                        <li><a href="<?= baseUrl("projects") ?>">{{ [ge="პროექტები"][en="Projects"][ru="Проекты"] }}</a></li>
                     </ul>
                 </div>
             </li>
