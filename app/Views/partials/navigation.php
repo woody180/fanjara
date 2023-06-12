@@ -30,6 +30,9 @@
                 </div>
             </li>
             <li><a href="<?= baseUrl("page/contact") ?>">{{ [ge="კონტაქტი"][en="Contact us"][ru="Связаться с нами"] }}</a></li>
+            <?php if (checkAuth([1])): ?>
+            <li><a href="<?= baseUrl("site-management") ?>">{{ [ge="მართვის ინსტრუქცია"][en="CMS video Instruction"][ru="Инструкция по системе управления"] }}</a></li>
+            <?php endif; ?>
         </ul>
     </div>
 
