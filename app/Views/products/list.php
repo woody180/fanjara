@@ -5,6 +5,39 @@
 
 <section class="uk-section">
     <div class="uk-container min-height">
+        
+        <?php if (urlSegments('last') == 'markizebi-da-pergola'): ?>
+        <div class="uk-flex uk-flex-right uk-margin-medium-bottom" data-responsive="max-width[960]; style[display: block;]">
+            <a href="https://www.markilux.com/en-de/service/fabric-finder" target="_blank" class="uk-display-block uk-button uk-button-primary uk-button-icon uk-button-icon-right uk-margin-right" data-responsive="max-width[960]; style[margin-bottom: 15px; margin-right: 0px !important;]">
+                <span>
+                    <?= 
+                        App\Engine\Libraries\Languages::translate([
+                            'ge' => 'მარკიზების ქსოვილის შერჩევა',
+                            'en' => 'Awning fabric finder',
+                            'ru' => 'Селектор тентовой ткани'
+                        ]);
+                    ?>
+                </span>
+                <span uk-icon="icon: arrow-right"></span>
+            </a>
+            
+            <a href="https://www.markilux.com/en-de/awning?filters=189612_189613_156791_156795" target="_blank" class="uk-display-block uk-button uk-button-primary uk-button-icon uk-button-icon-right">
+                <span>
+                    <?= 
+                        App\Engine\Libraries\Languages::translate([
+                            'ge' => 'ამ ღილაკს არ ვიცი რა დავაწერო',
+                            'en' => 'ამ ღილაკს არ ვიცი რა დავაწერო',
+                            'ru' => 'ამ ღილაკს არ ვიცი რა დავაწერო'
+                        ]);
+                    ?>
+                </span>
+                <span uk-icon="icon: arrow-right"></span>
+            </a>
+        </div>
+        <?php endif; ?>
+        
+        
+        
        
         <div class="uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid-match" uk-grid>
             <?php foreach ($products->data as $product): ?>
