@@ -11,6 +11,10 @@ class ComposerStaticInitbe9a3927d2ffb091b461e4012d3ca89e
         array (
             'ScssPhp\\ScssPhp\\' => 16,
         ),
+        'L' => 
+        array (
+            'League\\Plates\\' => 14,
+        ),
         'C' => 
         array (
             'Cocur\\Slugify\\' => 14,
@@ -21,6 +25,10 @@ class ComposerStaticInitbe9a3927d2ffb091b461e4012d3ca89e
         'ScssPhp\\ScssPhp\\' => 
         array (
             0 => __DIR__ . '/..' . '/scssphp/scssphp/src',
+        ),
+        'League\\Plates\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/plates/src',
         ),
         'Cocur\\Slugify\\' => 
         array (
