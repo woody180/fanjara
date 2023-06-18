@@ -16,6 +16,7 @@ return [
     'thumbnail' => 'სურათი',
     'gallery' => 'გალერეა',
     'send' => 'გაგზავნა',
+    'send_message' => 'შეტყობინების გაგზავნა',
     'create' => 'შექმნა',
     'submit' => 'შექმნა',
     'category' => 'კატეგორია',

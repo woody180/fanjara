@@ -16,6 +16,7 @@ return [
     'thumbnail' => 'Thumbnail',
     'gallery' => 'Gallery',
     'send' => 'Send',
+    'send_message' => 'Send message',
     'create' => 'Create',
     'submit' => 'Submit',
     'category' => 'Category',
