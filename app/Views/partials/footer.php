@@ -47,7 +47,7 @@
                                 <span class="uk-display-inline-block uk-margin-small-left">+995(32)223 80 60</span>
                             </a>
                             
-                            <a href="tel:+995322238060" class="uk-display-block uk-margin-bottom uk-link-reset">
+                            <a href="mailto:info@fanjara.ge" class="uk-display-block uk-margin-bottom uk-link-reset">
                                 <span uk-icon="icon: mail"></span>
                                 <span class="uk-display-inline-block uk-margin-small-left">info@fanjara.ge</span>
                             </a>
