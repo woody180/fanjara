@@ -44,5 +44,7 @@ return [
     'name' => 'Name',
     'subject' => 'Subject',
     'email' => 'eMail',
-    'message' => 'Message'
+    'message' => 'Message',
+    'fullname' => 'Full name',
+    'phone' => 'Phone'
 ];
