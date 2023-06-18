@@ -10,7 +10,7 @@
 <section class="uk-section">
     <div class="uk-container min-height">
         
-        <div class="fj-contact-card uk-card uk-card-default uk-card-body min-height upper uk-border-rounded uk-width-2-3@l uk-width-1-2@m uk-margin-auto uk-text-center">
+        <div class="fj-contact-card uk-card uk-card-default uk-card-body min-height upper uk-border-rounded uk-width-3-4@l uk-width-2-3@m uk-margin-auto uk-text-center">
             <span uk-icon="icon: phone; ratio: 3;"></span>
             
             <div class="uk-flex uk-flex-column uk-flex-between fj-contact-card-inner uk-margin-top">
@@ -43,7 +43,7 @@
         </div>
         
         
-        <div data-style="margin-bottom: -145px;" class="uk-margin-medium-top uk-card uk-card-default uk-card-body upper uk-border-rounded uk-width-2-3@l uk-width-1-2@m uk-margin-auto">
+        <div  id="contact-form" data-style="margin-bottom: -145px;" class="uk-margin-medium-top uk-card uk-card-default uk-card-body upper uk-border-rounded uk-width-3-4@l uk-width-2-3@m uk-margin-auto">
             <p class="uk-text-bold"><?= App\Engine\Libraries\Languages::translate('trans.info') ?></p>
                     
             <ul class="uk-list uk-list-striped">
@@ -87,15 +87,41 @@
             </p>
             <hr class="uk-divider-small">
             <p class="uk-margin-small uk-text-small"> <?= App\Engine\Libraries\Languages::translate([
-                            'ge' => 'ორ.-შაბ. 10:00-19:00 სთ.',
-                            'en' => 'Mon.-Sat. 10:00-19:00 h.',
-                            'ru' => 'Пн.-Сб. 10:00-19:00',
+                            'ge' => 'ორ.-პარ. 10:00-19:00 სთ.',
+                            'en' => 'Mon.-fr. 10:00-19:00 h.',
+                            'ru' => 'Пн.-Пт. 10:00-19:00',
                         ]) ?></p>
             <p class="uk-margin-small uk-text-small"><?= App\Engine\Libraries\Languages::translate([
-                            'ge' => 'კვირა 11:00-16:00 სთ.',
-                            'en' => 'Sunday 11:00-16:00.',
-                            'ru' => 'Воскресенье 11:00-16:00.',
+                            'ge' => 'შაბათი - კვირა: შეთანხმებით',
+                            'en' => 'Saturday - Sunday: by agreement',
+                            'ru' => 'суббота-воскресенье: по договоренности',
                         ]) ?></p>
+        
+        
+        
+            
+            
+            <div class="uk-margin-large-top uk-background-muted uk-card uk-card-body uk-border-rounded">
+                
+                <?php if (hasFlashData('error')): ?>
+                <div class="uk-alert-warning" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p><?= getFlashData('error') ?></p>
+                </div>
+                <?php endif; ?>
+                
+                
+                <?php if (hasFlashData('success')): ?>
+                <div class="uk-alert-warning" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p><?= getFlashData('success') ?></p>
+                </div>
+                <?php endif; ?>
+
+                
+                <?= $this->insert('partials/contact_form') ?>
+            </div>
+        
         </div>
         
     </div>

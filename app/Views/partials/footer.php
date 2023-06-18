@@ -14,12 +14,20 @@
                                     <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo-light.png") ?>" alt="<?= APPNAME ?>" width="300" />
                                 </div>
                                 
-                                <p class="uk-margin-medium-bottom">
-                                    <?= App\Engine\Libraries\Languages::translate([
-                                        'ge' => 'REHAU-ს ოფიციალური პარტნიორი 2009 წლიდან', 
-                                        'en' => 'Official partner of REHAU since 2009', 
-                                        'ru' => 'Официальный партнер REHAU с 2009 года.']) ?>
-                                </p>
+                                <div class="uk-margin-small-top uk-margin-medium-bottom">
+                                    <p class="uk-margin-remove">
+                                        <?= App\Engine\Libraries\Languages::translate([
+                                            'ge' => 'REHAU-ს ოფიციალური პარტნიორი 2009 წლიდან', 
+                                            'en' => 'Official partner of REHAU since 2009', 
+                                            'ru' => 'Официальный партнер REHAU с 2009 года.']) ?>
+                                    </p>
+                                    <p class="uk-margin-remove">
+                                        <?= App\Engine\Libraries\Languages::translate([
+                                            'ge' => 'markilux-ის წარმომადგენელი საქართველოში 2013 წლიდან', 
+                                            'en' => 'Markilux representative in Georgia since 2013', 
+                                            'ru' => 'Представитель Markilux в Грузии с 2013 года.']) ?>
+                                    </p>
+                                </div>
                             </div>
 
                             <p>

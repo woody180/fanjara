@@ -61,15 +61,15 @@
                         ?>
                     </p>
                     <hr class="uk-divider-small">
-                    <p class="uk-margin-small uk-text-small"><?= App\Engine\Libraries\Languages::translate([
-                            'ge' => 'ორ.-შაბ. 10:00-19:00 სთ.',
-                            'en' => 'Mon.-Sat. 10:00-19:00 h.',
-                            'ru' => 'Пн.-Сб. 10:00-19:00',
+                    <p class="uk-margin-small uk-text-small"> <?= App\Engine\Libraries\Languages::translate([
+                            'ge' => 'ორ.-პარ. 10:00-19:00 სთ.',
+                            'en' => 'Mon.-fr. 10:00-19:00 h.',
+                            'ru' => 'Пн.-Пт. 10:00-19:00',
                         ]) ?></p>
-                    <p class="uk-margin-small uk-text-small"><?= App\Engine\Libraries\Languages::translate([
-                            'ge' => 'კვირა 11:00-16:00 სთ.',
-                            'en' => 'Sunday 11:00-16:00.',
-                            'ru' => 'Воскресенье 11:00-16:00.',
+            <p class="uk-margin-small uk-text-small"><?= App\Engine\Libraries\Languages::translate([
+                            'ge' => 'შაბათი - კვირა: შეთანხმებით',
+                            'en' => 'Saturday - Sunday: by agreement',
+                            'ru' => 'суббота-воскресенье: по договоренности',
                         ]) ?></p>
                 </div>
             </div>

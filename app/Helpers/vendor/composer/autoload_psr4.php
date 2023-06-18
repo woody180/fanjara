@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ScssPhp\\ScssPhp\\' => array($vendorDir . '/scssphp/scssphp/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'League\\Plates\\' => array($vendorDir . '/league/plates/src'),
     'Cocur\\Slugify\\' => array($vendorDir . '/cocur/slugify/src'),
 );
