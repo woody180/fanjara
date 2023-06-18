@@ -44,11 +44,84 @@ export default class UiController extends SketchEngine {
 
 
     bindEvents() {
-
+        UIkit.util.on('#call-request', 'shown', this.functions.renderRequestForm.bind(this));
+        UIkit.util.on('#call-request', 'hidden', this.functions.clearForm.bind(this));
+        this.lib('body').on('submit', this.functions.sendCallRequest.bind(this), '#call-request-form');
     }
 
 
     functions = {
+        
+        sendCallRequest(e)
+        {
+            e.preventDefault();
+            
+            const form = document.querySelector('#call-request-form');
+            const objectData = this.lib().formData(form, false);
+            const csrf = document.querySelector('meta[name="csrf_token"]').getAttribute('content');
+            objectData.csrf_token = csrf;
+            form.querySelectorAll('.error-text').forEach(p => p.setAttribute('hidden', true));
+            
+            fetch(`${this.variables.baseurl}/${document.documentElement.lang}/call-request`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: JSON.stringify(objectData)
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res.errors) {
+                    for (const key in res.errors) {
+                        const err = res.errors[key].toString();
+                        const p = document.querySelector(`#error-${key}`);
+                        
+                        p.innerText = err;
+                        p.removeAttribute('hidden');
+                    }
+                }
+                
+                
+                if (res.error) {
+                    UIkit.notification(`<p class="uk-margin-remove uk-text-small">${res.error}</p>`, {
+                        status: 'danger',
+                        pos: 'top-center'
+                    })
+                }
+            });
+        },
+        
+        
+        clearForm(e)
+        {
+            e.target.querySelector('#request-content').innerHTML = '';
+        },
+        
+        renderRequestForm(e)
+        {
+            const body = e.target.querySelector('#request-content');
+            body.innerHTML = `<div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>`;
+            
+            //spinner.setAttribute('hidden', true);
+            
+            fetch(`${this.variables.baseurl}/${document.documentElement.lang}/call-request`, {
+                method: "get",
+                headers: {
+                  "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+            .then(res => res.text())
+            .then(res => {
+                                
+                body.innerHTML = res;
+            });
+        },
+        
         
         languageParser()
         {
