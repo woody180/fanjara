@@ -12,6 +12,7 @@ return [
     'url' => 'Url',
     'price' => 'Price',
     'priceconstructorurl' => 'Redirect url',
+    'constructor_url' => 'Constructor url',
     'content' => 'Content',
     'thumbnail' => 'Thumbnail',
     'gallery' => 'Gallery',

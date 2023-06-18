@@ -12,6 +12,7 @@ return [
     'url' => 'მისამართი',
     'price' => 'ფასი',
     'priceconstructorurl' => 'გადასასვლელი მისამართი',
+    'constructor_url' => 'კონსტრუქტორის მისამართი',
     'content' => 'ტექსტი / კონტენტი',
     'thumbnail' => 'სურათი',
     'gallery' => 'გალერეა',

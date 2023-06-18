@@ -12,6 +12,7 @@ return [
     'url' => 'Url',
     'price' => 'Цена',
     'priceconstructorurl' => 'URL-адрес перенаправления',
+    'constructor_url' => 'URL-адрес конструктора',
     'content' => 'Содержание',
     'thumbnail' => 'показательная картина',
     'gallery' => 'Галерея',
