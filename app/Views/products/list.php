@@ -42,7 +42,7 @@
         <div class="uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid-match" uk-grid>
             <?php foreach ($products->data as $product): ?>
                 <div>
-                    <div class="uk-card uk-card-default uk-overflow-hidden uk-border-rounded">
+                    <div class="uk-card uk-card-default uk-overflow-hidden uk-border-rounded uk-flex uk-flex-column uk-flex-between">
                         
                         <?php if (checkAuth([1])): ?>
                         <a uk-tooltip="<?= App\Engine\Libraries\Languages::translate('trans.edit') ?>" target="_blank" href="<?= baseUrl("product/{$product->id}/edit") ?>" class="uk-icon-button uk-position-top-left uk-position-z-index uk-margin-left uk-margin-top" uk-icon="icon: link;"></a>
@@ -55,9 +55,11 @@
                         </div>
                         
                         <div class="uk-card-body">
-                            <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 16px]" class="uk-card-title uk-margin-remove">
-                                <a target="_blank" class="uk-link-reset" href="<?= $product->constructorurl ?>"><?= $product->title ?></a>
-                            </h3>
+                            <div>
+                                <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 16px]" class="uk-card-title uk-margin-remove">
+                                    <a target="_blank" class="uk-link-reset" href="<?= $product->constructorurl ?>"><?= $product->title ?></a>
+                                </h3>
+                            </div>
                             
                             <?php if (strlen($product->details)): ?>
                             <hr>
@@ -65,7 +67,7 @@
                             <?php endif; ?>
                         </div>
                         
-                        <div class="uk-card-footer">
+                        <div class="uk-card-footer uk-position-relative">
                             <a target="_blank" href="<?= $product->constructorurl ?>" class="uk-button uk-button-text"><?= App\Engine\Libraries\Languages::translate('trans.configurator_link') ?></a>
                         </div>
                     </div>
