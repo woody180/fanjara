@@ -47,5 +47,6 @@ return [
     'email' => 'eMail',
     'message' => 'Message',
     'fullname' => 'Full name',
-    'phone' => 'Phone'
+    'phone' => 'Phone',
+    'configurator_link' => 'Open configurator'
 ];
