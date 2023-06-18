@@ -1,4 +1,4 @@
-<div id="main-header">
+<div id="main-header"  uk-sticky>
     <div data-style="padding: 6px 0; background-color: #f3f3f3" class="uk-text-small">
         <div class="uk-container">
             <div uk-grid class="uk-child-width-1-2 uk-grid-collapse">
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="uk-background-default uk-box-shadow-medium" data-responsive="max-width[980]; style[padding: 15px 0]" uk-sticky>
+    <div class="uk-background-default uk-box-shadow-medium" data-responsive="max-width[980]; style[padding: 15px 0]">
         <div class="uk-container">
             <nav uk-navbar>
 
