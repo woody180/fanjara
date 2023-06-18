@@ -41,4 +41,8 @@ return [
     'add_slide' => 'Add slide',
     'edit_slides' => 'Edit slides',
     'slides' => 'Slides',
+    'name' => 'Name',
+    'subject' => 'Subject',
+    'email' => 'eMail',
+    'message' => 'Message'
 ];
