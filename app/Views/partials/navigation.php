@@ -15,7 +15,7 @@
             <li><a href="#"> <span class="ln-parse">{{[en="Services"][ge="სერვისი"][ru="Сервисы"]}}</span> <span uk-navbar-parent-icon></span> </a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="<?= baseUrl("page/consulting") ?>" class="ln-parse">{{ [en="Consultations and projects"][ge="კონსულტაციები და პროექტები"][ru="консультация и проектирование"] }}</a></li>
+                        <li><a href="<?= baseUrl("page/consulting") ?>" class="ln-parse">{{ [en="Consulting and designing"][ge="კონსულტაციები და პროექტირება"][ru="консультация и проектирование"] }}</a></li>
                     </ul>
                 </div>
             </li>
