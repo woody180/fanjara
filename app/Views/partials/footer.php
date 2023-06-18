@@ -13,6 +13,13 @@
                                 <div class="uk-first-column">
                                     <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo-light.png") ?>" alt="<?= APPNAME ?>" width="300" />
                                 </div>
+                                
+                                <p class="uk-margin-medium-bottom">
+                                    <?= App\Engine\Libraries\Languages::translate([
+                                        'ge' => 'REHAU-ს ოფიციალური პარტნიორი 2009 წლიდან', 
+                                        'en' => 'Official partner of REHAU since 2009', 
+                                        'ru' => 'Официальный партнер REHAU с 2009 года.']) ?>
+                                </p>
                             </div>
 
                             <p>
