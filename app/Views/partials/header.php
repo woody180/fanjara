@@ -1,8 +1,8 @@
-<div id="main-header"  uk-sticky>
-    <div data-style="padding: 6px 0; background-color: #f3f3f3" class="uk-text-small">
-        <div class="uk-container">
+<div id="main-header" uk-sticky>
+    <div data-style="padding: 6px 0; background-color: #f3f3f3; height: 40px;" class="uk-text-small uk-flex uk-flex-middle uk-visible@m">
+        <div class="uk-container uk-flex-1">
             <div uk-grid class="uk-child-width-1-2 uk-grid-collapse">
-                <div>
+                <div class="uk-flex uk-flex-middle">
                     <div>
                         <?= App\Engine\Libraries\Languages::translate([
                             'ge' => 'თბილისი, წერეთლის 87ზ',
@@ -13,8 +13,11 @@
                 </div>
 
                 <div>
-                    <div class="uk-flex uk-flex-right">
-                        <a href="tel:+995322238060" class="uk-link-reset">+995 (32) 223 80 60</a>
+                    <div class="uk-flex uk-flex-right uk-flex-middle">
+                        
+                        <a uk-toggle="target: #call-request" href="#" class="uk-text-bold uk-link-reset uk-margin-right"><?= App\Engine\Libraries\Languages::translate(['ge' => 'მოითხოვე ზარი', 'en' => 'Request Call', 'ru' => 'Заказать звонок']) ?></a>
+                        
+                        <a href="tel:+995322238060" class="uk-link-reset uk-text-bold">+995 (32) 223 80 60</a>
                     </div>
                 </div>
             </div>

@@ -62,11 +62,14 @@
     animation-fill-mode: forwards;
     z-index: 991;
 
-    @keyframes phoneBubble {
-        from {transform: scale(.9); opacity: 0; visibility: hidden;}
-        50% {transform: scale(1.1);}
-        to {transform: scale(1); opacity: 1; visibility: visible;}
+    @media screen and (max-width: $m-screen) {
+        @keyframes phoneBubble {
+            from {transform: scale(.9); opacity: 0; visibility: hidden;}
+            50% {transform: scale(1.1);}
+            to {transform: scale(1); opacity: 1; visibility: visible;}
+        }
     }
+    
 }
 
 #phone-bubble:hover {

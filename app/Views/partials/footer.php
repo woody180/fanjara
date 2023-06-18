@@ -142,11 +142,11 @@
         
     <?= $this->insert('partials/phoneBubble') ?>
         
+    <?= $this->insert('partials/request_call_modal') ?>
         
     <?php if (checkAuth([1])): ?>
     <?= $this->insert('partials/admin_tools') ?>
     <?php endif; ?>
-        
         
     <?= $this->section('scriptsFooter') ?>
 
