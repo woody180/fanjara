@@ -21,7 +21,7 @@
                 <span uk-icon="icon: arrow-right"></span>
             </a>
             
-            <a href="https://www.markilux.com/en-de/awning?filters=189612_189613_156791_156795" target="_blank" class="uk-display-block uk-button uk-button-primary uk-button-icon uk-button-icon-right">
+            <a href="https://www.markilux.com/en-de/awning#overview" target="_blank" class="uk-display-block uk-button uk-button-primary uk-button-icon uk-button-icon-right">
                 <span>
                     <?= 
                         App\Engine\Libraries\Languages::translate([
@@ -66,7 +66,7 @@
                         </div>
                         
                         <div class="uk-card-footer">
-                            <a target="_blank" href="<?= $product->constructorurl ?>" class="uk-button uk-button-text"><?= App\Engine\Libraries\Languages::translate('trans.read_more') ?></a>
+                            <a target="_blank" href="<?= $product->constructorurl ?>" class="uk-button uk-button-text"><?= App\Engine\Libraries\Languages::translate('trans.configurator_link') ?></a>
                         </div>
                     </div>
                 </div>
