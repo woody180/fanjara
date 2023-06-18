@@ -31,24 +31,23 @@
             
             <?= setMethod('put') ?>
             
-            <div class="uk-width-1-2@m">
+            <div>
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.title') ?></label>
                 <input type="text" name="title" class="uk-input uk-border-rounded" value="<?= $product->title ?>">
                 <?= show_error('error', 'title') ?>
             </div>
             
             <div class="uk-width-1-2@m">
-                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.url') ?></label>
-                <input type="text" name="url" class="uk-input uk-border-rounded" value="<?= $product->url ?>">
-                <?= show_error('error', 'url') ?>
-            </div>
-            
-            <div>
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.priceconstructorurl') ?></label>
                 <input type="text" name="constructorurl" class="uk-input uk-border-rounded" value="<?= $product->constructorurl ?>">
                 <?= show_error('error', 'constructorurl') ?>
             </div>
             
+            <div class="uk-width-1-2@m">
+                <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.constructor_url') ?></label>
+                <input type="text" name="producturl" class="uk-input uk-border-rounded" value="<?= $product->producturl ?>">
+                <?= show_error('error', 'producturl') ?>
+            </div>
             
             <div>
                 <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.details') ?></label>

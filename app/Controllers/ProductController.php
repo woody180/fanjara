@@ -34,6 +34,7 @@ class ProductController {
                 'body|Content' => 'string|max[500]',
                 'constructorurl|Calculation url' => 'valid_url|max[500]',
                 'productcategory|Product category' => 'required|numeric|max[3]',
+                'producturl|Product url' => 'valid_url',
                 'lang|Lanugage' => 'min[2]|max[3]|alpha'
             ])
             ->validate();
@@ -158,6 +159,7 @@ class ProductController {
                 'gallery|Gallery' => 'string|max[400]',
                 'body|Content' => 'string|max[500]',
                 'constructorurl|Calculation url' => 'valid_url|max[500]',
+                'producturl|Product url' => 'valid_url',
                 'productcategory|Product category' => 'required|numeric|max[3]',
                 'lang|Lanugage' => 'min[2]|max[3]|alpha'
             ])

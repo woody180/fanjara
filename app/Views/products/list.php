@@ -51,7 +51,9 @@
                         <div class="uk-card-media-top uk-position-relative" data-responsive="max-width[<?= M_WIDTH ?>]; style[height: 170px;]">
                             <?= img(['src' => $product->thumbnail, 'class' => 'uk-object-cover uk-display-block uk-width-1-1'], true) ?>
                         
-                            <a target="_blank" class="uk-position-absolute uk-width-1-1 uk-height-1-1" data-style="top: 0; left: 0;" href="<?= $product->constructorurl ?>"></a>
+                            <?php if ($product->producturl): ?>
+                            <a target="_blank" class="uk-position-absolute uk-width-1-1 uk-height-1-1" data-style="top: 0; left: 0;" href="<?= $product->producturl ?>"></a>
+                            <?php endif; ?>
                         </div>
                         
                         <div class="uk-card-body">
