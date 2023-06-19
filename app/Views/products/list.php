@@ -59,7 +59,11 @@
                         <div class="uk-card-body">
                             <div>
                                 <h3 data-responsive="max-width[<?= M_WIDTH ?>]; style[font-size: 16px]" class="uk-card-title uk-margin-remove">
-                                    <a target="_blank" class="uk-link-reset" href="<?= $product->constructorurl ?>"><?= $product->title ?></a>
+                                    <?php if ($product->producturl): ?>
+                                    <a target="_blank" class="uk-link-reset" href="<?= $product->producturl ?>"><?= $product->title ?></a>
+                                    <?php else: ?>
+                                    <p><?= $product->title ?></p>
+                                    <?php endif; ?>
                                 </h3>
                             </div>
                             
