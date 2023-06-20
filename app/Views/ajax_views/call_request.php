@@ -2,9 +2,19 @@
     
     <h3><?= App\Engine\Libraries\Languages::translate([
         'ge' => 'მოითხოვე ზარი',
-        'en' => 'Call request',
-        'ru' => 'Заказать звонок'
+        'en' => 'Request a call',
+        'ru' => 'Закажите звонок'
     ]) ?></h3>
+
+    <div>
+        <p class="uk-margin-remove">
+            <?= App\Engine\Libraries\Languages::translate([
+                'ge' => 'და მენეჯერ-კონსულტანტი დაგიკავშირდებათ უახლოეს მომავალში',
+                'en' => 'and our manager-consultant will contact you as soon as possible.',
+                'ru' => 'и наш менеджер-консультант свяжется с вами в ближаишее време.'
+            ]) ?>
+        </p>
+    </div>
     
     <div>
         <label for="" class="uk-form-label"><?= App\Engine\Libraries\Languages::translate('trans.fullname') ?></label>
@@ -20,7 +30,11 @@
     </div>
     
     <div>
-        <button type="submit" id="call-request-button" class="uk-button uk-button-primary uk-width-1-1" type="button"><?= App\Engine\Libraries\Languages::translate('trans.send_message') ?></button>
+        <button type="submit" id="call-request-button" class="uk-button uk-button-primary uk-width-1-1" type="button"><?= App\Engine\Libraries\Languages::translate([
+            'ru' => 'Заказать звонок',
+            'ge' => 'ზარის მოთხოვნა',
+            'en' => 'Send call request'
+        ]) ?></button>
     </div>
     
 </form>
