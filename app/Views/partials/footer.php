@@ -11,7 +11,7 @@
                         <div>
                             <div>
                                 <div class="uk-first-column">
-                                    <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo-light.png") ?>" alt="<?= APPNAME ?>" width="300" />
+                                    <img id="footer-logo" src="<?= assetsUrl("images/logo/avelux-logo_{$_SESSION['lang']}.png") ?>" alt="<?= APPNAME ?>" width="300" />
                                 </div>
                                 
                                 <div class="uk-margin-small-top uk-margin-medium-bottom">
@@ -33,9 +33,9 @@
                             <p>
                                 <?=
                                     App\Engine\Libraries\Languages::translate([
-                                        'ge' => 'შპს ავე ლუქსის საკონტაქტო მონაცემები',
+                                        'ge' => 'შპს აველუქსის საკონტაქტო მონაცემები',
                                         'ru' => 'Контактные данные ООО «Аве Люкс»',
-                                        'en' => 'Contact details of Ave Lux Ltd',
+                                        'en' => 'Contact details of AV LUX Ltd',
                                     ]);
                                 ?>
                             </p>
@@ -51,6 +51,14 @@
                                 <span uk-icon="icon: mail"></span>
                                 <span class="uk-display-inline-block uk-margin-small-left">info@fanjara.ge</span>
                             </a>
+
+
+                            <div class="uk-flex">
+                                <a target="_blank" href="https://www.facebook.com/AV.LUXX" uk-icon="icon: facebook" class="uk-icon-button uk-margin-small-right"></a>
+                                <a target="_blank" href="https://www.youtube.com/@avlux" uk-icon="icon: youtube" class="uk-icon-button uk-margin-small-right"></a>
+                                <a target="_blank" href="https://www.instagram.com/markilux_georgia/" uk-icon="icon: instagram" class="uk-icon-button"></a>
+                            </div>
+
                         </div>
                         
                     </div>
@@ -70,12 +78,12 @@
                                 </li>
                                 <li>
                                     <a href="<?= baseUrl('page/window-configuration') ?>">
-                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ფანჯრის კონფიგურაცია', 'en' => 'Window configuration', 'ru' => 'Kонфигурация окна']) ?>
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'კარ-ფანჯრების კონფიგურაცია', 'en' => 'Window configuration', 'ru' => 'Kонфигурация окон']) ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= baseUrl('page/tentis-konfiguratsia') ?>">
-                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ტენტის კონფიგურაცია', 'en' => 'Tent configuration', 'ru' => 'Конфигурация палатки']) ?>
+                                    <a target="_blank" href="https://www.markilux.com/en-de/awning">
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'მარკიზების კონფიგურატორი', 'en' => 'Awning configurator', 'ru' => 'Конфигуратор маркиз']) ?>
                                     </a>
                                 </li>
                             </ul>
@@ -91,7 +99,7 @@
                             <ul class="uk-list">
                                 <li>
                                     <a href="<?= baseUrl('page/fanjris-shesakheb') ?>">
-                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ფანჯრის შესახებ', 'en' => 'About the window', 'ru' => 'Об окне']) ?>
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'კარ-ფანჯრების შესახებ', 'en' => 'About the windows', 'ru' => 'Об окнах']) ?>
                                     </a>
                                 </li>
                                 <li>
@@ -101,17 +109,17 @@
                                 </li>
                                 <li>
                                     <a href="<?= baseUrl('page/sheminvis-shesakheb') ?>">
-                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'შემინვის შესახებ', 'en' => 'About listening', 'ru' => 'О прослушивании']) ?>
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'შემინვის შესახებ', 'en' => 'About glassing', 'ru' => 'Об остеклении']) ?>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="<?= baseUrl('page/tentebis-shesakheb') ?>">
-                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ტენტების შესახებ', 'en' => 'About tents', 'ru' => 'О палатках']) ?>
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'მარკიზების შესახებ', 'en' => 'About awnings', 'ru' => 'О маркизах']) ?>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="<?= baseUrl('page/frequently-asked-questions') ?>">
-                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ხშირად დასმული კითხვები', 'en' => 'Frequently Asked Questions', 'ru' => 'Часто задаваемые вопросы']) ?>
+                                        <?= App\Engine\Libraries\Languages::translate(['ge' => 'ხშირად დასმული კითხვები', 'en' => 'FAQ', 'ru' => 'Часто задаваемые вопросы']) ?>
                                     </a>
                                 </li>
                             </ul>
