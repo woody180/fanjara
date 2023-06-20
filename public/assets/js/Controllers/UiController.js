@@ -33,6 +33,7 @@ export default class UiController extends SketchEngine {
         navDropdown: '.uk-navbar-dropdown',
         mobileNav: '#fg-mobile-nav ul',
         tinyArea: '.tiny-area',
+        header: '#main-header',
         navItem: '#fj-navigation > ul li a' // Items to translate
     };
 
@@ -47,10 +48,28 @@ export default class UiController extends SketchEngine {
         UIkit.util.on('#call-request', 'shown', this.functions.renderRequestForm.bind(this));
         UIkit.util.on('#call-request', 'hidden', this.functions.clearForm.bind(this));
         this.lib('body').on('submit', this.functions.sendCallRequest.bind(this), '#call-request-form');
+        window.addEventListener('scroll', this.functions.scrolling.bind(this));
     }
 
 
     functions = {
+        scrolling(e) {
+
+            const headerheight = document.querySelector('#main-header').offsetHeight;
+            let height = undefined;
+            if (document.querySelector('.uk-slideshow')) {
+                height = document.querySelector('.uk-slideshow').offsetHeight;
+            } else {
+                height = 350
+            }
+
+            if ((document.documentElement.scrollTop + headerheight) > height) {
+                document.querySelector(`${this.selectors.header} #second-header`).classList.add('uk-animation-fade', 'uk-animation-reverse');
+            } else {
+                document.querySelector(`${this.selectors.header} #second-header`).classList.remove('uk-animation-fade');
+            }
+        },
+
         
         sendCallRequest(e)
         {
