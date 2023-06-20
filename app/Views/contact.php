@@ -25,17 +25,16 @@
                     <a href="tel:+995(32)2238060">+995 (32) 223 80 60</a>
 
                     <hr class="uk-divider-icon uk-width-medium uk-margin-auto">
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1488.5581333987327!2d44.782359!3d41.739585!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDQ0JzIyLjUiTiA0NMKwNDYnNTYuNSJF!5e0!3m2!1sen!2sge!4v1687075211986!5m2!1sen!2sge" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d744.276541047929!2d44.781748570133765!3d41.73980291814836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDQ0JzIzLjIiTiA0NMKwNDYnNTUuNCJF!5e0!3m2!1sen!2sge!4v1687174192870!5m2!1sen!2sge" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
 
                 <div class="uk-flex uk-flex-center uk-margin-top">
                     
                     <div class="uk-flex">
-                        <a href="#" uk-icon="icon: facebook" class="uk-icon-button uk-margin-small-right"></a>
-                        <a href="#" uk-icon="icon: twitter" class="uk-icon-button uk-margin-small-right"></a>
-                        <a href="#" uk-icon="icon: instagram" class="uk-icon-button"></a>
+                        <a target="_blank" href="https://www.facebook.com/AV.LUXX" uk-icon="icon: facebook" class="uk-icon-button uk-margin-small-right"></a>
+                        <a target="_blank" href="https://www.youtube.com/@avlux" uk-icon="icon: youtube" class="uk-icon-button uk-margin-small-right"></a>
+                        <a target="_blank" href="https://www.instagram.com/markilux_georgia/" uk-icon="icon: instagram" class="uk-icon-button"></a>
                     </div>
                     
                 </div>
