@@ -3,7 +3,7 @@
 <?php $this->start('mainSection') ?>
 
 <?php if (initModel('slider')->list()): ?>
-<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 400; max-height: 700; autoplay: true; autoplay-interval: 5000; pause-on-hover: false;">
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 400; max-height: 700; autoplay: true; autoplay-interval: 5000; pause-on-hover: false; animation: pull;">
 
     <ul class="uk-slideshow-items">
         <?php foreach (initModel('slider')->list() as $slide): ?>
