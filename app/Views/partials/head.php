@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="<?= assetsUrl('css/uikit.min.css') ?>">
     <link rel="stylesheet" href="<?= assetsUrl('css/main.min.css') ?>">
 
+    <link rel="icon" type="image/png" href="<?= assetsUrl("images/favicon.png") ?>" />
+
     <script src="<?= assetsUrl('js/uikit.min.js') ?>"></script>
     <script src="<?= assetsUrl('js/uikit-icons.min.js') ?>"></script>
+    
     
     <?= $this->section('scriptsHead') ?>
     
