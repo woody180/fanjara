@@ -72,13 +72,14 @@ class ProductcategoryController {
         initModel('productcategory');
         
         $cat = R::findOne('productcategory', 'url = ?', [$req->getSegment(2)]);
-        $catID = $cat->id;
-        
-        
-       return $res->render('products/list', [
-           'products' => initModel('Productcategory')
-               ->categoryProducts($req->getSegment(2))
-       ]);
+        $results = initModel('Productcategory')
+        ->categoryProducts($req->getSegment(2));
+
+        $results->data = array_values($results->data);
+
+        return $res->render('products/list', [
+            'products' => $results
+        ]);
     }
 
 

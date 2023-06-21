@@ -54,7 +54,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
             'limit' => $limit,
             'current' => $currentPage
         ]); 
-        $pages = R::find("productcategory", "lang = ? order by id desc limit $limit offset $offset", [$_SESSION['lang']]);
+        $pages = R::find("productcategory", "lang = ? order by ordering limit $limit offset $offset", [$_SESSION['lang']]);
         
         $obj = new stdClass();
         $obj->pager = $totalPages > $limit ? $pagingData : null;
@@ -78,7 +78,7 @@ class Model_Productcategory extends RedBean_SimpleModel {
             'current' => $currentPage
         ]); 
         //$pages = R::find("pages", "order by timestamp asc limit $limit offset $offset");
-        $product = $category->with("lang = ? order by id desc limit $limit offset $offset", [$_SESSION['lang']])->sharedProduct;
+        $product = $category->with("lang = ? order by ordering asc limit $limit offset $offset", [$_SESSION['lang']])->sharedProduct;
         
         $obj = new stdClass();
         $obj->pager = $totalPages > $limit ? $pagingData : null;

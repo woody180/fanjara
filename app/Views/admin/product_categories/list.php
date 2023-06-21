@@ -38,13 +38,15 @@
         </div>
         
 
-        <ul class="uk-list uk-list-striped">
+        <ul class="uk-list uk-list-striped" uk-sortable="handle: .cursor-move">
             <?php foreach ($categories->data as $category): ?>
             <li>
                 <div class="uk-flex uk-flex-between uk-flex-middle">
                     <div><?= $category->title ?></div>
                     
                     <div class="uk-flex">
+                        
+                        <span uk-icon="icon: move;" class="uk-icon-button uk-margin-small-right cursor-move" data-style="cursor: move;"></span>
                         
                         <span class="uk-icon-button uk-margin-small-right uk-text-xsmall uk-text-uppercase"><?= $category->lang ?></span>
                         

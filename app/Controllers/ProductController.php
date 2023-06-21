@@ -230,5 +230,21 @@ class ProductController {
         
         return $res->redirect(baseUrl("productlist"));
     }
+    
+    
+    // Ordering
+    public function ordering($req, $res)
+    {
+        initModel('product');
+
+        foreach ($req->body() as $data) {
+            $id = $data[0];
+            $index = $data[1];
+
+            R::exec("UPDATE product SET ordering = $index WHERE id = $id");
+        }
+
+        return $res->send(['success']);
+    }
 
 }

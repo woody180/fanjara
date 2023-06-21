@@ -9,6 +9,7 @@ $router->get('product/new',                'ProductController@new', ['Middleware
 $router->post('product',                   'ProductController@create', ['Middlewares/checkAdmin']);
 $router->get('product',                    'ProductController@index');
 $router->get('productlist',                'ProductController@proudctList', ['Middlewares/checkAdmin']);
+$router->put('product/ordering',           'ProductController@ordering', ['Middlewares/checkAdmin']);
 $router->get('product/(:segment)',         'ProductController@show');
 $router->get('product/(:segment)/edit',    'ProductController@edit', ['Middlewares/checkAdmin']);
 $router->put('product/(:segment)',         'ProductController@update', ['Middlewares/checkAdmin']);

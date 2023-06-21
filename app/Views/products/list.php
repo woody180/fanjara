@@ -39,13 +39,16 @@
         
         
        
-        <div class="uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid-match" uk-grid>
-            <?php foreach ($products->data as $product): ?>
-                <div>
+        <div id="fj-product-grid" class="uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid-match" uk-grid uk-sortable="handle: .cursor-move">
+            <?php foreach ($products->data as $index => $product): ?>
+                <div data-index="<?= $product->ordering ?>" data-id="<?= $product->id ?>">
                     <div class="uk-card uk-card-default uk-overflow-hidden uk-border-rounded uk-flex uk-flex-column uk-flex-between">
                         
                         <?php if (checkAuth([1])): ?>
-                        <a uk-tooltip="<?= App\Engine\Libraries\Languages::translate('trans.edit') ?>" target="_blank" href="<?= baseUrl("product/{$product->id}/edit") ?>" class="uk-icon-button uk-position-top-left uk-position-z-index uk-margin-left uk-margin-top" uk-icon="icon: link;"></a>
+                            <div class="uk-position-absolute uk-position-left-top uk-position-z-index uk-margin-top uk-margin-left">
+                                <a uk-tooltip="<?= App\Engine\Libraries\Languages::translate('trans.edit') ?>" target="_blank" href="<?= baseUrl("product/{$product->id}/edit") ?>" class="uk-icon-button" uk-icon="icon: link;"></a>
+                                <span uk-icon="icon: move;" class="uk-icon-button uk-margin-small-right cursor-move" data-style="cursor: move;"></span>
+                            </div>
                         <?php endif; ?>
                         
                         <div class="uk-card-media-top uk-position-relative" data-responsive="max-width[<?= M_WIDTH ?>]; style[height: 170px;]">

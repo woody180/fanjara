@@ -34,6 +34,7 @@ export default class UiController extends SketchEngine {
         mobileNav: '#fg-mobile-nav ul',
         tinyArea: '.tiny-area',
         header: '#main-header',
+        productContainer: '#fj-product-grid',
         navItem: '#fj-navigation > ul li a' // Items to translate
     };
 
@@ -49,10 +50,48 @@ export default class UiController extends SketchEngine {
         UIkit.util.on('#call-request', 'hidden', this.functions.clearForm.bind(this));
         this.lib('body').on('submit', this.functions.sendCallRequest.bind(this), '#call-request-form');
         window.addEventListener('scroll', this.functions.scrolling.bind(this));
+        UIkit.util.on(this.selectors.productContainer, 'moved', this.functions.sorting.bind(this));
     }
 
 
     functions = {
+        
+        sorting(e) {
+            e.detail[0].items.forEach((item, index) => {
+                const i = index + 1;
+                if (item.getAttribute('data-index') != i) {
+                    item.setAttribute('data-index', i);
+                    item.classList.add('updated');
+                }
+            });
+
+            this.functions.saveSorting.call(this);
+        },
+
+
+        saveSorting() {
+            const positions = [];
+
+            document.querySelectorAll('.updated').forEach((item, index) => {
+                positions.push([item.getAttribute('data-id'), item.getAttribute('data-index')]);
+                item.classList.remove('updated');
+            });
+
+            fetch(`${this.variables.baseurl}/${document.documentElement.lang}/product/ordering`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: JSON.stringify(positions)
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+            });
+        },
+        
+        
         scrolling(e) {
 
             const headerheight = document.querySelector('#main-header').offsetHeight;
