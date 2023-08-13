@@ -7,6 +7,7 @@ define("FORCE_SECURE_REQUESTS", FALSE);
 define("CSRF_PROTECTION", TRUE);
 define("CSRF_REFRESH", FALSE);
 define("MULTILINGUAL", TRUE);
+define("ENV", "development"); // Environment can be development or can be empty
 
 define("L_WIDTH", 1200);
 define("M_WIDTH", 960);

@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Engine\Libraries\ImageResize;
-include APPROOT . '/Engine/Libraries/ImageResize/ImageResizeException.php';
-use Gumlet\ImageResizeException;
+namespace Gumlet;
+
 use Exception;
 
 /**
